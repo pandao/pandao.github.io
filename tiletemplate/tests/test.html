@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Pandao" /> 
+		<link rel="stylesheet" type="text/css" href="js/qunit/qunit-1.16.0.css" />
+		<title>tileTemplate Test : basic</title> 
+	</head>
+	<body> 
+		<div id="qunit"></div>
+		<div id="qunit-fixture"></div>
+        <textarea id="textarea-tpl" style="width:0;height:0;resize:none;border:none;background:none;">
+从文本区域获取的模板，&lt;%=title%&gt;
+        </textarea>
+        <script id="test-tpl" type="text/tileTemplate">
+		Hello <%=title%> <% alert(123); $.getScript(''); %>
+        </script>
+        <script id="test-tpl-tag" type="text/tileTemplate">
+		<%=tag:time%>
+				<%=tag:em:12%>         <%=tag:em:12%>
+		<% include("test-tpl") %>
+        </script>
+        <script id="test-tpl2" type="text/tileTemplate">
+		Hello {{=title}}  
+		{{ alert(123); $.getScript(''); }}
+        </script>
+        <script id="test-tpl2-tag" type="text/tileTemplate">
+		{{=tag:time}}
+				{{=tag:em:12}}         {{=tag:em:12}}
+				{{ include("test-tpl2") }}
+        </script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="../src/tiletemplate.js"></script>
+		<script type="text/javascript" src="js/qunit/qunit-1.16.0.js"></script>
+		<script type="text/javascript">
+			
+			var data = {
+				version: "1.0.0",
+				title : "标题XXX",
+				avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+				list : []
+			};  
+			var length = 10;
+
+			for (var i = 0; i < length; i ++) {
+				data.list.push({
+					index: (i+1),
+					user: '<strong style="color:red">tileTemplate '+(i+1)+'</strong>',
+					site: 'https://github.com/pandao/tileTemplate'
+				});	
+			};
+
+			QUnit.module( "使用<% %>" );
+			QUnit.test( "直接传入模板标签", function( assert ) {
+
+				tileTemplate.set("openTag", "<%");
+				tileTemplate.set({
+					closeTag : "%>"
+				});
+				
+				var tpl = tileTemplate.render("Hello <%=title%>", {title:"测试标题"});
+				assert.ok( tpl, "渲染成功！" );
+				assert.equal(tpl, "Hello 测试标题", "equal!"); 
+			}); 
+
+			QUnit.test( "通过ID模板标签，使用config方法", function( assert ) {  
+				tileTemplate.config("openTag", "<%");
+				tileTemplate.config({
+					closeTag : "%>"
+				}); 
+
+				var tpl = tileTemplate.render("test-tpl", {title:"测试标题"});
+				assert.ok(tpl, "渲染成功！" ); 
+				assert.strictEqual(tpl, "Hello 测试标题", "equal!");
+			}); 
+
+			QUnit.test( "通过compile()方法", function( assert ) {  
+				tileTemplate.set("openTag", "<%");
+				tileTemplate.set({
+					closeTag : "%>"
+				});
+				
+				var html = document.getElementById("test-tpl").innerHTML;
+
+				var compile = tileTemplate.compile(html);
+				var tpl = compile({title:"测试标题"});
+				assert.ok(tpl, "渲染成功！" ); 
+				assert.strictEqual(tpl, "Hello 测试标题", "equal!");
+			}); 
+
+			QUnit.test( "设置tag和使用include", function( assert ) {  
+				tileTemplate.set("openTag", "<%");
+				tileTemplate.set({
+					closeTag : "%>"
+				});
+			
+				tileTemplate.tag("em", function(content) { 				
+					if(content == 12) return '<img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_thumb.gif" alt="em'+content+'"/>';
+					else return content.toString();
+				});
+			
+				tileTemplate.tag("time", function() {
+					return " time: "+(new Date).getTime();
+				}); 
+ 
+				var tpl = tileTemplate.render("test-tpl-tag", {});
+				assert.ok(tpl, "渲染成功！" );  
+			}); 
+
+			QUnit.test( "textarea里的模板", function( assert ) {  
+ 
+				var tpl = tileTemplate.render("textarea-tpl", {title:" test title"});
+				document.getElementById('textarea-tpl').value = tpl;
+				assert.ok(tpl, "渲染成功！" );  
+			}); 
+
+			QUnit.module( "使用{{ }}" );
+			QUnit.test( "直接传入模板标签", function( assert ) {
+				tileTemplate.set("openTag", "{{");
+				tileTemplate.set({
+					closeTag : "}}"
+				});
+
+				var tpl = tileTemplate.render("Hello {{=title}}", {title:"测试标题"});
+				assert.ok(tpl, "渲染成功！" );
+				assert.strictEqual(tpl, "Hello 测试标题", "equal!");
+			}); 
+
+			QUnit.test( "通过ID模板标签", function( assert ) {  
+				tileTemplate.set("openTag", "{{");
+				tileTemplate.set({
+					closeTag : "}}"
+				}); 
+
+				var tpl = tileTemplate.render("test-tpl2", {title:"测试标题"});
+				assert.ok(tpl, "渲染成功！" ); 
+				assert.strictEqual(tpl, "Hello 测试标题", "equal!");
+			}); 
+
+			QUnit.test( "通过compile()方法", function( assert ) {  
+				tileTemplate.set("openTag", "{{");
+				tileTemplate.set({
+					closeTag : "}}"
+				});
+				
+				var html = document.getElementById("test-tpl2").innerHTML;
+
+				var compile = tileTemplate.compile(html);
+				var tpl = compile({title:"测试标题"});
+				assert.ok(tpl, "渲染成功！" ); 
+				assert.strictEqual(tpl, "Hello 测试标题", "equal!");
+			}); 
+
+			QUnit.test( "设置tag和使用include", function( assert ) {  
+				tileTemplate.set("openTag", "{{");
+				tileTemplate.set({
+					closeTag : "}}"
+				});
+			
+				tileTemplate.tag("em", function(content) { 				
+					if(content == 12) return '<img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_thumb.gif" alt="em'+content+'"/>';
+					else return content.toString();
+				});
+			
+				tileTemplate.tag("time", function() {
+					return " time: "+(new Date).getTime();
+				}); 
+ 
+				var tpl = tileTemplate.render("test-tpl2-tag", {});
+				assert.ok(tpl, "渲染成功！" ); 
+			}); 
+		</script>
+	</body>
+</html>

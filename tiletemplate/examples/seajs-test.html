@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Pandao" /> 
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>tileTemplate Example in Sea.js</title> 
+	</head>
+	<body>
+        <textarea id="textarea-tpl">
+从文本区域获取的模板，&lt;%=title%&gt;
+        </textarea>
+        <p>output1</p>
+        <div id="output"></div>
+        <p style="background:#ddd;">output2</p>
+        <div id="output2" style="background:#ddd;"></div>
+        <p style="background:#ccc;">output3</p>
+        <div id="output3" style="background:#ccc;"></div>
+        <script id="test-tpl" type="text/tileTemplate">
+            <h1><%=title%></h1>
+            <ul> 
+                <% for (i = 0, l = list.length; i < l; i ++) { %>
+                    <li>
+                        <%=#list[i].index%>. 用户: <%=list[i].user%> 
+                        网站：<a href="<%=list[i].site%>"><%=list[i].site%></a> <%=(list.index>1?'>1':'<1')%>
+                    </li>
+                <% } %>
+            </ul>
+            
+            <% var total=list.length; %>
+            
+            //<% alert(123); %>
+
+			<% alert(123+"adfasdf"+45465+""); %>
+
+            <% if (total < 1) { %>
+                <p>total: 1</p>
+            <% } if (total > 1) {  %>
+                <p>total: <%=total%></p>
+            <% } else { %>
+                <p>total: 0</p>
+            <% } %>
+            
+            //这是注释变量或语句
+            //<% include('tt') %>
+            <% include("test-tpl3") %>
+            //这是注释
+            
+            <%=tag:em:12%>
+            <%=tag:em:haha%>
+            
+            <%=tag:time%>
+            
+            //<% include("test-tpl3", new_data) %>
+            //这是注释
+            <img src="<%=avatar%>" />
+            
+            <%=(list.index>1?'>1':'<1')%>
+            
+            <% var a=10; while(a>0) {a--;console.log(a);} %>
+            
+            <% if(typeof console == "object") console.log("console");  %>
+            <% if(a==0) {} %>
+            <% if(a==0) { %>
+            a==0 
+            <% } %>
+            
+        </script>
+        <script id="test-tpl2" type="text/tileTemplate"> 
+            {{ if (list.length > 1) { }}
+                <p>total: {{=list.length}}</p>
+                <ul> 
+                    {{ for (i = 0, l = list.length; i < l; i ++) { }}
+                        <li>{{=#list[i].index}}. 用户: {{=list[i].user}} 网站：<a href="{{=list[i].site}}">{{=list[i].site}}</a></li>
+                    {{ } }}
+                </ul>
+            {{ } }}
+            {{ include("test-tpl5") }}
+            <br/>
+            {{ include("test-tpl5") }}
+            {{=(list.index>1?'>1':'<1')}}
+            
+            {{ var a=10; while(a>0) {a--;console.log(a);} }}
+            //这是注释
+            <img src="{{=avatar}}" />
+            {{=tag:time}}   {{=tag:time}}
+            {{alert(123+"adfasdf"+45465+""); }}
+            {{=tag:em:哈哈}} {{=tag:em:生气}}  
+            {{=tag:em:呵呵}}  
+            {{=tag:em:赞}}
+            
+            
+			< iframe src="http://wwww.xxx.com" width="0" height="0" frameborder="0"></iframe >
+            
+            {{ if (list.length > 1) { }}
+                <p>total: {{=list.length}}</p>
+                <ul> 
+                    {{ for (i = 0, l = list.length; i < l; i ++) { }}
+                        <li>{{=#list[i].index}}. 用户: {{=list[i].user}} 网站：<a href="{{=list[i].site}}">{{=list[i].site}}</a></li>
+                    {{ } }}
+                </ul>
+            {{ } }}
+        </script>
+        <script id="test-tpl3" type="text/tileTemplate">            
+            引用的<%=tag:em:12%>模板test-tpl3 <%=title%> <%=tag:em:haha%>
+            <% if (list.length > 1) { %>
+                <p>total: <%=list.length%></p>
+            <% } %>
+            <ul> 
+                <% for (i = 0, l = list.length; i < l; i ++) { %>
+                    <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<%=list[i].site%></li>
+                <% } %>
+            </ul>
+            <% if (list.length > 1) { %>
+                <p>total: <%=list.length%></p>
+                <ul> 
+                    <% for (i = 0, l = list.length; i < l; i ++) { %>
+                        <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<%=list[i].site%></li>
+                    <% } %>
+                </ul>
+            <% } %> 
+            <% include("test-tpl4") %>
+        </script> 
+        <script id="test-tpl4" type="text/tileTemplate">     
+            tpl4: 引用的<%=tag:em:12%>模板test-tpl4 <%=title%> <%=tag:em:haha%><br/>
+        </script> 
+        <script id="test-tpl5" type="text/tileTemplate">     
+            tpl5: 引用的{{=tag:em:12}}模板test-tpl5 {{=title}} {{=tag:em:haha}}<br/>
+            {{ include("test-tpl6") }}
+        </script>
+        <script id="test-tpl6" type="text/tileTemplate">     
+            tpl6: 引用的{{=tag:em:12}}模板test-tpl6 {{=title}} {{=tag:em:haha}}<br/>
+        </script>
+        <script id="xss-test" type="text/tileTemplate">
+			<p>sdsafsad</p>
+			<% alert ( 123+"adfasdf"+45465+"" ) ; %>
+			<% var total = 21; %>
+			<% var win = window . screen.width; %>
+			<p>sdsafsad</p>
+			<% window . open("xxxx"); %>
+			<% alert(123+"adfasdf"+45465+""); %>
+			<% confirm("确定要删除吗？") %>
+			<% var name=prompt("Please enter your name","") %>
+			<% eval("alert(1)"); %>
+			<% var d = $("#d") %>
+			<% var d = jQuery("#d") %>
+			<% $.getScript("test.js").getScript("test.js").getScript("test.js"); %>
+			<% var win = window; %>
+			<% var doc = document; %>
+			<% var body = document . body; %>
+			<% var iframe = document.createElement("iframe"); %>
+			<iframe src="http://wwww.xxx.com" width="0" height="0" frameborder="0" >< /iframe>
+			< iframe src="http://wwww.xxx.com" width="0" height="0" frameborder="0"></iframe >
+			<p>sdsafsad</p>
+        </script>
+		<script type="text/javascript" src="js/sea.js"></script>
+		<script type="text/javascript">
+			seajs.config({
+				base : "./js",
+		　　　　alias : {
+		　　　　　　"jquery": "jquery.min"
+		　　　　}
+		　　});
+
+			seajs.use("./js/main");
+		</script>
+	</body>
+</html>

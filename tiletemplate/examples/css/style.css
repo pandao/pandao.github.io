@@ -1,0 +1,23 @@
+/**
+ *
+ * Examples page style.css
+ *
+ * @FileName: style.css
+ * @Auther: Pandao   
+ * Copyright@2014 all right reserved.
+ */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+body{font-size:14px;color:#444;font-family:"微软雅黑",Arial;background:#eee;}
+a{color:#444;text-decoration: none;}
+a:hover{color:#065BC2;text-decoration: none;}
+.clear{clear:both;}
+img{border:none;vertical-align: middle;}
+ul{list-style: none;}
+#debuger, .buttons{padding:30px;line-height:22px;border:1px solid #ddd;margin:15px;background:#fff;}
+
+.buttons {padding:10px 30px;}
+
+.buttons h4 {margin-bottom:10px;}
+
+.buttons input[type=button] {cursor: pointer;padding: 5px 10px;margin-right:5px;}
