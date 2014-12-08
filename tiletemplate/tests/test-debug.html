@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Pandao" />  
+		<title>tileTemplate Example</title> 
+	</head>
+	<body>
+		<h4>查看调试输出，请打开浏览器控制台</h4>
+        <textarea id="textarea-tpl">
+从文本区域获取的模板，&lt;%=title%&gt;
+        </textarea>
+        <p>output1</p>
+        <div id="output"></div>
+        <p style="background:#ddd;">output2</p>
+        <div id="output2" style="background:#ddd;"></div>
+        <p style="background:#ccc;">output3</p>
+        <div id="output3" style="background:#ccc;"></div>
+        <script id="test-tpl" type="text/tileTemplate">
+            <h1><%=title%></h1>
+            <ul> 
+                <% for (i = 0, l = list.length; i < l; i ++) { %>
+                    <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<a href="<%=list[i].site%>"><%=list[i].site%></a> <%=(list.index>1?'>1':'<1')%></li>
+                <% } %>
+            </ul>
+            
+            <% var total=list.length; %>
+            
+            //<% alert(123); %>
+
+			<% alert(123+"adfasdf"+45465+""); %>
+
+            <% if (total < 1) { %>
+                <p>total: 1</p>
+            <% } if (total > 1) {  %>
+                <p>total: <%=total%></p>
+            <% } else { %>
+                <p>total: 0</p>
+            <% } %>
+            
+            //这是注释变量或语句
+            //<% include('tt') %>
+            <% include("test-tpl3") %>
+            //这是注释
+            
+            <%=tag:em:12%>
+            <%=tag:em:haha%>
+            
+            <%=tag:time%>
+            
+            //<% include("test-tpl3", new_data) %>
+            //这是注释
+            <img src="<%=avatar%>" />
+            
+            <%=(list.index>1?'>1':'<1')%>
+            
+            //<% var a=10; while(a>0) {a--;console.log(a)} %>
+            
+            <% if(typeof console == "object") console.log("console");  %>
+            <% if(a==0) {} %>
+            <% if(a==0) { %>
+            a==0 
+            <% } %>
+            
+        </script>
+        <script id="test-tpl3" type="text/tileTemplate">            
+            引用的<%=tag:em:12%>模板test-tpl3 <%=title%> <%=tag:em:haha%>
+            <% if (list.length > 1) { %>
+                <p>total: <%=list.length%></p>
+            <% } %>
+            <ul> 
+                <% for (i = 0, l = list.length; i < l; i ++) { %>
+                    <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<a href="<%=list[i].site%>"><%=list[i].site%></a></li>
+                <% } %>
+            </ul>
+            <% if (list.length > 1) { %>
+                <p>total: <%=list.length%></p>
+                <ul> 
+                    <% for (i = 0, l = list.length; i < l; i ++) { %>
+                        <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<a href="<%=list[i].site%>"><%=list[i].site%></a></li>
+                    <% } %>
+                </ul>
+            <% } %> 
+            <% include("test-tpl4") %>
+        </script> 
+        <script id="test-tpl4" type="text/tileTemplate">     
+            tpl4: 引用的<%=tag:em:12%>模板test-tpl4 <%=dtitle%> <%=tag:em:haha%><br/>
+        </script> 
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="../src/tiletemplate.js"></script>
+        <script>
+            console.time('tileTemplate');
+				
+            var data = {
+                version: "1.0.0",
+                title : "标题XXX",
+                avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+                list : []
+            };  
+
+            for (var i = 0; i < 10; i ++) {
+                data.list.push({
+                    index: (i+1),
+                    user: '<strong style="color:red">tileTemplate '+(i+1)+'</strong>',
+                    site: 'https://github.com/pandao/tileTemplate'
+                });	
+            };
+
+				
+            tileTemplate.tag("em", function(content) { 
+
+                if(content == 12) return '<img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_thumb.gif" alt="em'+content+'"/>';
+                else return content.toString();
+            });
+
+            tileTemplate.tag("time", function() {
+                return " time: "+(new Date).getTime();
+            }); 
+
+            /*tileTemplate.set({
+                openTag : "{{",
+                closeTag : "}}"
+            });*/
+            
+            tileTemplate.config('debug', true);
+
+            var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML);
+
+            //var tpl  = tileTemplate.render("test-tpl", data); 
+            //tileTemplate.clear("test-tpl");
+            var tpl  = tileTemplate.render("test-tpl", data); 
+            //tileTemplate.clear("test-tpl2");
+            //tpl  = tileTemplate.render("test-tpl", data);  
+
+            document.getElementById('output').innerHTML = tpl;
+            document.getElementById('output2').innerHTML = compiler(data);
+            document.getElementById('output3').innerHTML = tileTemplate.render("<%=title%>", data);
+
+            //console.log(tileTemplate.escape(document.getElementById('output').innerHTML));
+            document.getElementById('textarea-tpl').value = tileTemplate.render('textarea-tpl', data);
+            
+            console.timeEnd('tileTemplate');
+        </script>
+	</body>
+</html>
