@@ -166,7 +166,7 @@
 					return " time: "+(new Date).getTime();
 				}); 
  
-				var tpl = tileTemplate.render("test-tpl2-tag", {});
+				var tpl = tileTemplate.render("test-tpl2-tag", data);
 				assert.ok(tpl, "渲染成功！" ); 
 			}); 
 		</script>

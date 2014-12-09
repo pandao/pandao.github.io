@@ -42,13 +42,15 @@
     
     var _this = exports;
     
-    exports.version  = "1.0.0";
+    exports.version = "1.0.0";
     
-    exports.tags = [];
+    exports.tags    = [];
     
     exports.caches  = [];
+        
+    exports.regex   = {};
     
-    exports.extend = function(defaults, options) { 
+    exports.extend  = function(defaults, options) { 
         
         options = options || this;
             
@@ -101,7 +103,28 @@
         tpl = tpl.replace(new RegExp(openTag + "\s*(.*)\s*eval\(\s*(.*)\s*\)\s*(.*)"+closeTag, "igm"), "");
         
         return tpl.trim();
-    }; 
+    };
+        
+    exports.compileInclude = function(data) {
+        
+        var openTag        = this.settings.openTag;
+        var closeTag       = this.settings.closeTag;
+        
+        return (function($1, $2, $3) {
+    
+            var guid           = (new Date).getTime();
+            var id             = $2.replace("('", "").replace("')", "").replace("(\"", "").replace("\")", ""); 
+            var includeContent = (typeof $(id) == "string") ? id : ($(id) == null) ? id : $(id).value || $(id).innerHTML;
+            var compile        = _this.compile(includeContent, data, {include: true, name: id}).toString().split("\n").join('');
+
+            compile            = compile.replace('anonymous', 'anonymous' + guid);
+            compile           += ' if(data) { out += anonymous' + guid + '(data); }'; 
+
+            //console.log("include.compile", compile);
+
+            return openTag + " " + compile  + " " + closeTag;
+        });
+    };
         
     exports.compile  = function(tpl, data, options) {
         
@@ -124,33 +147,21 @@
         var varCommentRegex  = new RegExp(openTag + "=#(.*?)" + closeTag, "igm");                        // variable comment
         var lineCommentRegex = new RegExp("\/\/" + openTag + "?\\s*(.*?)\\s*" + closeTag + "?", "igm");  // line comment 
         var tagRegex         = /\s*tag:(\w+):?([\u4e00-\u9fa5]+|\w+|\d+)?\s*/igm;
-        var includeRegex     = new RegExp(openTag + "\\s*include((.*?))\\s*;?\\s*" + closeTag, "igm");
-        
-        var includeCompile   = function($1, $2, $3) {
-
-            var id             = $2.replace("('", "").replace("')", "").replace("(\"", "").replace("\")", ""); 
-            var includeContent = (typeof $(id) == "string") ? id : ($(id) == null) ? id : $(id).value || $(id).innerHTML;
-            var compile        = _this.compile(includeContent, data, {include: true, name: id}).toString().split("\n").join('');
-            
-            compile            = compile.replace('anonymous', 'anonymous' + guid);
-            compile           += ' if(data) { out += anonymous' + guid + '(data); }'; 
-
-            //console.log("include.compile", compile);
-
-            return openTag + " " + compile  + " " + closeTag;
-        };
+        var includeRegex     = new RegExp(openTag + "\\s*include\\s*((.*?))\\s*;?\\s*" + closeTag, "igm"); 
         
         var tagRegexHandler = function($1, $2, $3) {
 
             var str = (typeof $3 == "undefined") ? _this.tags[$2]() : _this.tags[$2]($3.toString());
 
             return "'" + str.toString() + "'";
-        };
+        }; 
+        
+        this.regex.include = includeRegex;
 
         tpl = tpl.replace(/(^\s*)|(\s*$)/g, "")                                          // clear spaces
                  .replace(varCommentRegex, function($1, $2) { return "'+'"; })
                  .replace(lineCommentRegex, "")
-                 .replace(includeRegex, includeCompile)
+                 .replace(this.regex.include, this.compileInclude(data))
                  .replace(regex, function($1, $2) { return "'+" + $2 + "+'"; })
                  .split("\n");
         
