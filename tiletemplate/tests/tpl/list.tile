@@ -1,0 +1,20 @@
+ 
+引用的模板list.tile <%=title%> <%=tag:em:haha%> 
+<%=tag:em:12%>
+
+<% if (list.length > 1) { %>
+	<p>total: <%=list.length%></p>
+<% } %>
+<ul> 
+	<% for (i = 0, l = list.length; i < l; i ++) { %>
+		<li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<%=list[i].site%></li>
+	<% } %>
+</ul>
+<% if (list.length > 1) { %>
+	<p>total: <%=list.length%></p>
+	<ul> 
+		<% for (i = 0, l = list.length; i < l; i ++) { %>
+			<li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<%=list[i].site%></li>
+		<% } %>
+	</ul>
+<% } %> 

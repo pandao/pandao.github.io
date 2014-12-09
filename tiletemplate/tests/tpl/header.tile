@@ -1,0 +1,11 @@
+<!-- include -->
+<h1>Header <%=title%></h1>
+<ul> 
+    <% for (i = 0, l = list.length; i < l; i ++) { %>
+        <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<%=list[i].site%></li>
+    <% } %>
+</ul>
+<% if (list.length > 1) { %>
+    <p>total: <%=list.length%></p>
+<% } %>
+<p>fadfssdfsadf</p>

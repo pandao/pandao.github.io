@@ -49,6 +49,7 @@
 			{
 				name: 'tileTemplate',
 				tester: function () { 
+                    //tileTemplate.set("debug", true);
 					var source = document.getElementById('tile-test-template').innerHTML;
 					var fn = tileTemplate.compile(source);
 					for (var i = 0; i < number; i ++) {
@@ -333,6 +334,7 @@
 		</ul>
 		</script>
 
+        <!-- 貌似发现一个令人尴尬的事 by:pandao -->
 
 		<!-- artTemplate 的模板 -->
 		<script id="template" type="text/tmpl">
