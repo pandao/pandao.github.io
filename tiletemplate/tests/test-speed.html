@@ -50,6 +50,7 @@
 				name: 'tileTemplate',
 				tester: function () { 
                     //tileTemplate.set("debug", true);
+                    tileTemplate.set("filter", false);
 					var source = document.getElementById('tile-test-template').innerHTML;
 					var fn = tileTemplate.compile(source);
 					for (var i = 0; i < number; i ++) {
@@ -461,9 +462,9 @@
 
 	<body>
 		<h1>引擎渲染速度测试</h1>
-		<p style="color:red;">特别说明：为了有效的“比较”，本测试用例使用的是 <a href="https://github.com/aui/artTemplate/tree/master/test">artTemplate</a> 的测试用例。</p>
+		<p style="color:red;">特别说明：为了能直观有效的进行“比较”，本测试用例使用的是 <a href="https://github.com/aui/artTemplate/tree/master/test">artTemplate</a> 的测试用例，感谢artTemplate的启发和工作。</p>
 		<p><strong><script>document.write(length)</script></strong> 条数据 × <strong><script>document.write(number)</script></strong> 次渲染测试 </p>
-		<p>tileTemplate [debug:false, cached:true]</p>
+		<p>tileTemplate [debug:false, filter:false, cached:true]</p>
 		<p>artTemplate  [escape:false, cache:true]</p>
 		<p><em>建议在拥有 v8 javascript 引擎的 chrome 浏览器上进行测试，避免浏览器停止响应</em></p>
 		<p><button id="button-test" onclick="this.disabled=true;startTest()" style="padding: 5px;">开始测试&raquo;</button> <span id="log" style="font-size:12px"><script>for (var i = 0; i < testList.length; i ++) {document.write(testList[i].name + '; ')}</script></span></p>

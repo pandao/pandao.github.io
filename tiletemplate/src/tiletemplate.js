@@ -4,7 +4,7 @@
  *
  * @FileName: tiletemplate.js
  * @Auther: Pandao 
- * @version: 1.2.0
+ * @version: 1.4.0
  * @License: MIT
  * Copyright@2014 all right reserved.
  */
@@ -61,13 +61,13 @@
         return options;
     };
     
-    exports.escape   = function(html) {
+    exports.htmlEncode   = function(html) {
         return html.replace(/\</igm, "&lt;").replace(/\>/igm, "&gt;").replace(/\"/igm, "&quot;").replace(/\'/igm, "&apos;"); 
     };
     
-    exports.unescape = function(html) {
+    exports.htmlDecode = function(html) {
         return html.replace(/\&lt;/igm, "<").replace(/\&gt;/igm, ">").replace(/\&quot;/igm, "\"").replace(/\&apos;/igm, "'");  
-    };
+    }; 
         
     exports.settings = {
         debug    : false,
@@ -90,7 +90,7 @@
 
     };
     
-    exports.xssFilter = function(tpl, openTag, closeTag) {  
+    exports.filter = function(tpl, openTag, closeTag) {  
         
         tpl = tpl.replace(/\s*<\s*iframe\s*(.*)\s*>\s*<\s*\/iframe\s*>\s*/igm, "");
         tpl = tpl.replace(new RegExp(openTag + "\s*(.*)\s*alert\s*\(\s*(.*)\s*\)\s*;?\s*(.*)"+closeTag, "igm"), "");
@@ -118,9 +118,7 @@
             var compile        = _this.compile(includeContent, data, {include: true, name: id}).toString().split("\n").join('');
 
             compile            = compile.replace('anonymous', 'anonymous' + guid);
-            compile           += ' if(data) { out += anonymous' + guid + '(data); }'; 
-
-            //console.log("include.compile", compile);
+            compile           += ' if(data) { out += anonymous' + guid + '(data); }';  
 
             return openTag + " " + compile  + " " + closeTag;
         });
@@ -145,6 +143,7 @@
         var closeTag         = this.settings.closeTag;
         var regex            = new RegExp(openTag + "=(.*?)" + closeTag, "igm");                         // or use eval
         var varCommentRegex  = new RegExp(openTag + "=#(.*?)" + closeTag, "igm");                        // variable comment
+        var escapeRegex      = new RegExp(openTag + "=@(.*?)" + closeTag, "igm");                        // escape regex
         var lineCommentRegex = new RegExp("\/\/" + openTag + "?\\s*(.*?)\\s*" + closeTag + "?", "igm");  // line comment 
         var tagRegex         = /\s*tag:(\w+):?([\u4e00-\u9fa5]+|\w+|\d+)?\s*/igm;
         var includeRegex     = new RegExp(openTag + "\\s*include\\s*((.*?))\\s*;?\\s*" + closeTag, "igm"); 
@@ -162,6 +161,7 @@
                  .replace(varCommentRegex, function($1, $2) { return "'+'"; })
                  .replace(lineCommentRegex, "")
                  .replace(this.regex.include, this.compileInclude(data))
+                 .replace(escapeRegex, function($1, $2) { return "'+_escape(" + $2 + ")+'"; })
                  .replace(regex, function($1, $2) { return "'+" + $2 + "+'"; })
                  .split("\n");
         
@@ -179,7 +179,7 @@
         {  
             tpl[i] = tpl[i].trim();
             
-            if(filter) tpl[i] = this.xssFilter(tpl[i], openTag, closeTag); 
+            if(filter) tpl[i] = this.filter(tpl[i], openTag, closeTag); 
             
             tpl[i] = "out+='" + tpl[i] + "';";
             
@@ -189,11 +189,12 @@
             tpl[i] = tpl[i].replace(/^out\+\=\'\/\/(.*?)\'\;$/, function($1, $2, $3) { return "/* " + $2 + " */"; }).replace("'';';", "'';");
         }         
         
+        var _escape = 'function _escape(str) {return str.replace(/[\'|\"|\>|\<|;]?/igm, "");}';
         var objectCount = "var objectCount = function(data){var total=0;for(var i in data){total++} return total;};";
-        var errorHandler = "if(typeof console == 'object') console.error('[tileTemplate]\\n" + this.escape(options.name) + "\\n\\n[type]\\nRender error\\n\\nmessage: '+e.message+'\\nline: '+(e.line+1));";
+        var errorHandler = "if(typeof console == 'object') console.error('[tileTemplate]\\n" + options.name + "\\n\\n[type]\\nRender error\\n\\nmessage: '+e.message+'\\nline: '+(e.line+1));";
         var debugCode    = "try {" + tpl.join('') + "\n return out; } catch(e) { e.line=_line; if(objectCount(data) > 0) { "+errorHandler+" }}";
 
-        tpl = "var out = '', _line=0;\n " + ( (debug) ? debugCode : tpl.join('') + "\n return out;" );
+        tpl = "var out = '', _line=0;\n " + ( (debug) ? debugCode : tpl.join('') + "\n return out;" ); 
 
         var extract = 'function extract(obj, parent) {' +
                       'for (var i in obj) { ' +
@@ -201,14 +202,14 @@
                       '}'+
                       '}';
         
-        var fn = new Function('data', objectCount + extract + 'extract(data, this);' + tpl);
-        //console.log(fn); 
+        var fn = new Function('data', _escape + objectCount + extract + 'extract(data, this);' + tpl); 
 
         return fn;
     };
         
     exports.render = function(id, data, filename) {
         
+        data     = data     || {};
         filename = filename || "";
             
         var cached  = this.settings.cached;

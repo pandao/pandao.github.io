@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>tileTemplate xxs filter tests</title>
+    </head>
+    <body>
+        <div id="output"></div>
+        <div id="output2"></div>
+        <script id="xss-test" type="text/tileTemplate">
+            Hello <%=title%>
+            <img src="<%=avatar%>" />
+            <img src="<%=@avatar%>" />
+            <img src="<%=@avatar2%>" />
+            <img src="<%=@avatar3%>" /> 
+        </script>
+        <script id="filter-test" type="text/tileTemplate">
+			<p>sdsafsad</p>
+			<% alert ( 123+"adfasdf"+45465+"" ) ; %>
+			<% var total = 21; %>
+			<% var win = window . screen.width; %>
+			<p>sdsafsad</p>
+			<% window . open("xxxx"); %>
+			<% alert(123+"adfasdf"+45465+""); %>
+			<% confirm("确定要删除吗？") %>
+			<% var name=prompt("Please enter your name","") %>
+			<% eval("alert(1)"); %>
+			<% var d = $("#d") %>
+			<% var d = jQuery("#d") %>
+			<% $.getScript("test.js").getScript("test.js").getScript("test.js"); %>
+			<% var win = window; %>
+			<% var doc = document; %>
+			<% var body = document . body; %>
+			<% var iframe = document.createElement("iframe"); %>
+			<iframe src="http://wwww.xxx.com" width="0" height="0" frameborder="0" >< /iframe>
+			< iframe src="http://wwww.xxx.com" width="0" height="0" frameborder="0"></iframe >
+			<p>sdsafsad</p>
+        </script>
+		<script type="text/javascript" src="../src/tiletemplate.js"></script>
+        <script>
+            console.time('tileTemplate');
+				
+            var data = {
+                version: "1.0.0",
+                title : "标题XXX",
+                avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+				avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123);"',
+				avatar3 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123)',
+                list : []
+            };  
+
+            for (var i = 0; i < 10; i ++) {
+                data.list.push({
+                    index: (i+1),
+                    user: '<strong style="color:red">tileTemplate '+(i+1)+'</strong>',
+                    site: 'https://github.com/pandao/tileTemplate'
+                });	
+            };
+            
+            tileTemplate.config('debug', true); 
+
+            document.getElementById('output').innerHTML  = tileTemplate.render("xss-test", data);
+            document.getElementById('output2').innerHTML = tileTemplate.render("filter-test", data);
+            
+            console.timeEnd('tileTemplate');
+        </script>
+    </body>
+</html>

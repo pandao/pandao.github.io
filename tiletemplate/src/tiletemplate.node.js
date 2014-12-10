@@ -4,7 +4,7 @@
  *
  * @FileName: tiletemplate.node.js
  * @Auther: Pandao 
- * @version: 1.2.0
+ * @version: 1.4.0
  * @License: MIT
  * Copyright@2014 all right reserved.
  */

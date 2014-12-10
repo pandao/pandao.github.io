@@ -45,6 +45,8 @@
             //<% include('tt') %>
             <% include("test-tpl3") %>
             //这是注释
+            <% /* include("test-tpl8") */ %>
+            <% /* 注释文本 */ %>
             
             <%=tag:em:12%>
             <%=tag:em:haha%>
@@ -54,6 +56,8 @@
             //<% include("test-tpl3", new_data) %>
             //这是注释
             <img src="<%=avatar%>" />
+            <img src="<%=@avatar%>" />
+            <img src="<%=@avatar2%>" />
             
             <%=(list.index>1?'>1':'<1')%>
             
@@ -83,6 +87,8 @@
             {{ var a=10; while(a>0) {a--;console.log(a);} }}
             //这是注释
             <img src="{{=avatar}}" />
+            <img src="{{=@avatar}}" />
+            <img src="{{=@avatar2}}" />
             {{=tag:time}}   {{=tag:time}}
             {{alert(123+"adfasdf"+45465+""); }}
             {{=tag:em:哈哈}} {{=tag:em:生气}}  

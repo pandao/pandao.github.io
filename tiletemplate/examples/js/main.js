@@ -7,6 +7,7 @@ define(function(require, exports, module) {
         version: "1.0.0",
         title : "标题XXX",
         avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+        avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123)',
         list : []
     }; 
     var data2 = {

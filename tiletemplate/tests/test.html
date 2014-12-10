@@ -15,6 +15,13 @@
         <script id="test-tpl" type="text/tileTemplate">
 		Hello <%=title%> <% alert(123); $.getScript(''); %>
         </script>
+        <script id="escape-test" type="text/tileTemplate">
+		Hello <%=title%> <% alert(123); $.getScript(''); %>
+        <img src="<%=avatar%>" />
+        <img src="<%=@avatar%>" />
+        <img src="<%=@avatar2%>" />
+        <img src="<%=@avatar3%>" />
+        </script>
         <script id="test-tpl-tag" type="text/tileTemplate">
 		<%=tag:time%>
 				<%=tag:em:12%>         <%=tag:em:12%>
@@ -29,6 +36,13 @@
 				{{=tag:em:12}}         {{=tag:em:12}}
 				{{ include("test-tpl2") }}
         </script>
+        <script id="escape-test2" type="text/tileTemplate">
+		Hello {{=title}} {{ alert(123); $.getScript(''); }}
+        <img src="{{=avatar}}" />
+        <img src="{{=@avatar}}" />
+        <img src="{{=@avatar2}}" />
+        <img src="{{=@avatar3}}" />
+        </script>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="../src/tiletemplate.js"></script>
 		<script type="text/javascript" src="js/qunit/qunit-1.16.0.js"></script>
@@ -38,6 +52,8 @@
 				version: "1.0.0",
 				title : "标题XXX",
 				avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+				avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123);"',
+				avatar3 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123)',
 				list : []
 			};  
 			var length = 10;
@@ -107,6 +123,13 @@
 				assert.ok(tpl, "渲染成功！" );  
 			}); 
 
+			QUnit.test( "转义测试", function( assert ) {  
+ 
+				var tpl = tileTemplate.render("escape-test", data); 
+				document.getElementById('escape-test').value = tpl;
+				assert.ok(tpl, "渲染成功！" );  
+			}); 
+
 			QUnit.test( "textarea里的模板", function( assert ) {  
  
 				var tpl = tileTemplate.render("textarea-tpl", {title:" test title"});
@@ -168,6 +191,17 @@
  
 				var tpl = tileTemplate.render("test-tpl2-tag", data);
 				assert.ok(tpl, "渲染成功！" ); 
+			}); 
+
+			QUnit.test( "转义测试", function( assert ) {  
+				tileTemplate.set("openTag", "{{");
+				tileTemplate.set({
+					closeTag : "}}"
+				});
+ 
+				var tpl = tileTemplate.render("escape-test2", data); 
+				document.getElementById('escape-test2').value = tpl;
+				assert.ok(tpl, "渲染成功！" );  
 			}); 
 		</script>
 	</body>

@@ -51,6 +51,8 @@
             //<% include("test-tpl3", new_data) %>
             //这是注释
             <img src="<%=avatar%>" />
+            <img src="<%=@avatar%>" />
+            <img src="<%=@avatar2%>" />
             
             <%=(list.index>1?'>1':'<1')%>
             
@@ -85,8 +87,7 @@
         </script> 
         <script id="test-tpl4" type="text/tileTemplate">     
             tpl4: 引用的<%=tag:em:12%>模板test-tpl4 <%=title%> <%=tag:em:haha%><br/>
-        </script> 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
+        </script>  
 		<script type="text/javascript" src="../src/tiletemplate.js"></script>
         <script>
             console.time('tileTemplate');
@@ -95,6 +96,7 @@
                 version: "1.0.0",
                 title : "标题XXX",
                 avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+				avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123);"',
                 list : []
             };  
 
