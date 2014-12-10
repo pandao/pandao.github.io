@@ -329,7 +329,7 @@
 		<script id="tile-test-template" type="text/tileTemplate">
 		<ul>
 			<% for (i = 0, l = list.length; i < l; i ++) { %>
-				<li>用户: <%=#list[i].user%>/ 网站：<%=#list[i].site%></li>
+				<li>用户: <%=list[i].user%>/ 网站：<%=list[i].site%></li>
 			<% } %>
 		</ul>
 		</script>
@@ -350,7 +350,7 @@
 		<ul>
 			<% for (var val, i = 0, l = list.length; i < l; i ++) { %>
 				<% val = list[i]; %>
-				<li>用户: <%:=val.user%>/ 网站：<%:=val.site%></li>
+				<li>用户: <%=val.user%>/ 网站：<%=val.site%></li>
 			<% } %>
 		</ul>
 		</script>
