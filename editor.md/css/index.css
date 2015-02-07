@@ -29,7 +29,6 @@ body {
     border: none;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
 .editormd-dialog-container {
@@ -99,11 +98,22 @@ body {
     bottom: 10%;
     right: 10%;
     display: none;
+    -webkit-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+
+#go-to-top:hover {
+    color: #2989D6 !important;
 }
 
 .page-header-container {
     width: 100%;
     margin: 0 auto;
+}
+
+.editormd-toolbar a {    
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 @media only screen and (min-width: 400px) {
