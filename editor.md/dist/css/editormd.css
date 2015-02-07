@@ -2370,7 +2370,7 @@
   border: 1px solid #ddd;
   text-align: left;
   overflow: hidden;
-  background: url("../images/loading.gif") no-repeat center center;
+  background: #fff url("../images/loading.gif") no-repeat center center;
   -webkit-background-size: 32px 32px;
   background-size: 32px 32px;
 }
@@ -2406,9 +2406,12 @@
 }
 
 .editormd-menu {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 .editormd-menu > li {
+  margin: 0;
   padding: 4px 0 5px;
   display: inline-block;
   position: relative;
@@ -2512,6 +2515,7 @@
   overflow: hidden;
   padding: 35px 0 0;
   position: relative;
+  background: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -2599,7 +2603,8 @@
 .editormd-preview {
   position: absolute;
   top: 35px;
-  right: -1px;
+  right: 0;
+  right: -1px\0;
   float: right;
   overflow: auto;
   line-height: 1.6;
@@ -2608,6 +2613,7 @@
 }
 
 .editormd .CodeMirror {
+  z-index: 10;
   float: left;
   border-right: 1px solid #ddd;
   font-size: 13px;

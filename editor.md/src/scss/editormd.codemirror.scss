@@ -6,14 +6,14 @@
     height: 100%;
     vertical-align: top;
     @include box-sizing(border-box);
-    //border-top: 1px solid #ddd;
     margin: 0;
 }
 
 .editormd-preview {
     position: absolute;
     top: 35px;
-    right: -1px;
+    right: 0;
+    right: -1px\0;
     float: right;
     overflow: auto;
     line-height: 1.6;
@@ -24,6 +24,7 @@
 .editormd {
     
     .CodeMirror {
+        z-index: 10;
         float: left;
         border-right: 1px solid #ddd;
         font-size: 13px;
