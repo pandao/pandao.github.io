@@ -45,8 +45,9 @@
         width                : "100%",
         height               : "100%",
         path                 : "./lib/",
-        watch                : true,            
+        watch                : true,  
         onload               : function() {},
+        onchange             : function() {},
         toc                  : true,
         tocStartLevel        : 2,
         fontSize             : "13px",
@@ -917,6 +918,8 @@
                         });
                     }); 
                 }
+                
+                $.proxy(settings.onchange, _this)();
             });
 
             return this;
@@ -1078,7 +1081,8 @@
          * @returns {editormd}         返回editormd的实例对象
          */
         
-        watch : function() {
+        watch : function(callback) {
+            callback  = callback || function() {};
             
             this.settings.watch = true;
             this.preview.show();
@@ -1093,6 +1097,8 @@
             
             this.saveToTextareas().resize();
             
+            $.proxy(callback, this)();
+            
             return this;
         },
         
@@ -1101,7 +1107,8 @@
          * @returns {editormd}         返回editormd的实例对象
          */
         
-        unwatch : function() {
+        unwatch : function(callback) {
+            callback  = callback || function() {};
             
             this.settings.watch = false;
             this.preview.hide();
@@ -1117,27 +1124,40 @@
             
             this.resize();
             
+            $.proxy(callback, this)();
+            
             return this;
         },
         
         /**
          * 显示编辑器
-         * @returns {editormd}         返回editormd的实例对象
+         * @param   {Function} [callback=function()] 回调函数
+         * @returns {editormd}                       返回editormd的实例对象
          */
-        
-        show : function() {
-            this.editor.show();
+        show : function(callback) {
+            callback  = callback || function() {};
+            
+            var _this = this;
+            this.editor.show(function(){
+                $.proxy(callback, _this)();
+            });
             
             return this;
         },
         
         /**
          * 隐藏编辑器
-         * @returns {editormd}         返回editormd的实例对象
+         * @param   {Function} [callback=function()] 回调函数
+         * @returns {editormd}                       返回editormd的实例对象
          */
         
-        hide : function() {
-            this.editor.hide();
+        hide : function(callback) {
+            callback  = callback || function() {};
+            
+            var _this = this;
+            this.editor.hide(function(){
+                $.proxy(callback, _this)();
+            });
             
             return this;
         },
@@ -1391,17 +1411,24 @@
             var text  = toc[i].text;
             var level = toc[i].level;
             
-            if (level < startLevel) { continue; }
+            if (level < startLevel) {
+                continue;
+            }
             
-            if (level > lastLevel) {
+            if (level > lastLevel) 
+            {
                 html += "";
-            } else if (level < lastLevel) {
+            } 
+            else if (level < lastLevel) 
+            {
                 html += (new Array(lastLevel - level + 2)).join("</ul></li>");
-            } else {
+            } 
+            else 
+            {
                 html += "</ul></li>";
             }
 
-            html += "<li><a class=\"toc-level-"+level+"\" href=\"#" + text + "\" level=\"" + level + "\">" + text + "</a><ul>";
+            html += "<li><a class=\"toc-level-" + level + "\" href=\"#" + text + "\" level=\"" + level + "\">" + text + "</a><ul>";
             lastLevel = level;
         }
         
