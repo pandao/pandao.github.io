@@ -14,15 +14,15 @@ a {
     display: table;
 }
 
-@media only screen and (max-height: 360px) and (orientation: landscape) {
-    .page-layout {
-        zoom: 0.7;
-    }
-}
-
 .page-main {
     vertical-align: middle;
     display: table-cell;
+}
+
+@media only screen and (max-height: 360px) and (orientation: landscape) {
+    .page-main {
+        zoom: 0.7;
+    }
 }
 
 .pui-menu {
