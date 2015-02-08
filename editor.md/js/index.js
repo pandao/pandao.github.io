@@ -43,7 +43,18 @@ $(function() {
             mathjax : true,
             previewCodeHighlight : true,
             flowChart : true,
-            sequenceDiagram : true
+            sequenceDiagram : true,
+            onfullscreen : function() {
+                this.editor.css("border-radius", 0);
+            },
+            onfullscreenExit : function() {
+                this.editor.css({
+                    border : "none",
+                    "border-radius" : "5px"
+                });
+                
+                this.resize();
+            }
         });
     });
 });
