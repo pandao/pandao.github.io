@@ -1,0 +1,41 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+a {
+    color: #fff;
+}
+
+.page-layout {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.page-main {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.pui-menu {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pui-menu > li > a {
+    vertical-align: middle;
+    color: #fff;
+}
+
+.pui-menu > li > a:hover {
+    background-color: #1A8BE8;
+}
+
+.pui-menu > li > a > .fa {
+}
+
+footer a + a {
+    margin-left: 8px;
+}
