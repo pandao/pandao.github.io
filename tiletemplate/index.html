@@ -1,1 +1,209 @@
-tileTemplate index.html
+<!DOCTYPE html>
+<html lang="zh"> 
+    <head>
+        <meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Cache-Control" content="no-siteapp"/>
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="keywords" content="tileTemplate" />
+        <meta name="description" content="tileTemplate: 一个简单的、高性能的开源Javascript模板引擎。A simple, high performance Javascript template engine. " />
+	    <meta name="author" content="pandao, pandao@vip.qq.com" />
+        <title>tileTemplate - 一个简单的、高性能的开源Javascript模板引擎</title>
+        <link rel="stylesheet" type="text/css" href="../planeui/vendors/font-awesome-4.2.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../planeui/dist/css/planeui.min.css" />
+        <link rel="stylesheet" type="text/css" href="../planeui/vendors/animate.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/prettify.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    </head>
+    <body>
+        <a name="top"></a>
+        <a href="#top" class="fa fa-arrow-circle-up fa-3x pui-text-green-400" id="go-to-top"></a>
+        <div class="pui-layout">
+            <header class="pui-bg-green page-header">
+                <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
+                    <h1 class="pui-text-center pui-text-xxxxxl page-title animated zoomInDown"><a href="./index.html" class="pui-text-white"><i class="fa fa-lg fa-cube"></i> tileTemplate</a></h1>
+                    <p class="pui-text-center pui-text-xl animated zoomInDown">一个简单的、高性能的开源Javascript模板引擎</p>
+                    <menu class="pui-text-center page-menu animated zoomInDown">
+                        <ul class="pui-menu pui-menu-inline pui-menu-radius">
+                            <li>
+                                <a href="#features"><i class="fa fa-flash"></i> 主要特性</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/pandao/tileTemplate/blob/master/README.md#主要语法" target="_blank"><i class="fa fa-book"></i> 主要语法</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/pandao/tileTemplate/blob/master/README.md#主要方法" target="_blank"><i class="fa fa-code"></i> 主要方法</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" target="_blank"><i class="fa fa-flask"></i> 使用示例 <i class="pui-arrow-down"></i></a>
+                                <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
+                                    <li>
+                                        <a href="./examples/index.html" target="_blank">简单示例</a>
+                                    </li>
+                                    <li>
+                                        <a href="./examples/requirejs-test.html" target="_blank">使用Require.js</a>
+                                    </li>
+                                    <li>
+                                        <a href="./examples/seajs-test.html" target="_blank">使用Sea.js</a>
+                                    </li>
+                                    <li>
+                                        <a href="./tests/test-debug.html" target="_blank">调试提示输出</a>
+                                    </li>
+                                    <li>
+                                        <a href="./tests/test-tags.html" target="_blank">自定义标签语法</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/pandao/tileTemplate/blob/master/tests/node-test.js" target="_blank">在Node.js中使用</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/pandao/tileTemplate/blob/master/tests/express-test.js" target="_blank">在Express.js中使用</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#download"><i class="fa fa-cloud-download"></i> 下载安装</a>
+                            </li>
+                            <li>
+                                <a href="#license"><i class="fa fa-check"></i> License</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/pandao/tileTemplate" target="_blank"><i class="fa fa-github"></i> Github</a>
+                            </li>
+                        </ul>
+                    </menu>
+                    <div id="code-box">
+                        <pre class="prettyprint linenums animated zoomInDown pui-z-depth-3"><code>&lt;!-- 模板输出位置 --&gt;
+&lt;div id="output"&gt;&lt;/div&gt;
+&lt;!-- 模板文档 --&gt;
+&lt;script id="test-tpl" type="text/tileTemplate"&gt;
+    &lt;h1&gt;&lt;%=title%&gt;&lt;/h1&gt;
+    &lt;ul&gt; 
+        &lt;% for (i = 0, len = list.length; i &lt; len; i ++) { %&gt;
+            &lt;li&gt;
+                用户: &lt;%=@list[i].user%&gt;
+                网站：&lt;a href="&lt;%=@list[i].site%&gt;"&gt;&lt;%=@list[i].site%&gt;&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;% } %&gt;
+    &lt;/ul&gt;
+&lt;/script&gt;</code></pre>
+                        <pre class="prettyprint linenums code2 pui-z-depth-3 animated zoomInDown"><code>var data = {
+    title : "标题XXX",
+    list : []
+}; 
+
+for (var i = 0; i < 10; i ++) {
+    data.list.push({
+        user: "&lt;strong style=\"color:red\"&gt;tileTemplate "+i+"&lt;/strong&gt;",
+        site: "https://github.com/pandao/tileTemplate"
+    }); 
+};
+
+var output = document.getElementById("output");
+output.innerHTML = tileTemplate.render("test-tpl", data);</code></pre>                        
+                    </div>
+                </div>
+            </header>
+            <div class="pui-grid pui-layout pui-layout-fixed pui-layout-fixed-1200 page-content">
+                <div class="pui-row">
+                    <div class="pui-grid-xs-12 pui-grid-sm-4 pui-grid-md-4">                        
+                        <a name="features"></a>
+                        <div class="pui-panel pui-panel-simple">
+                            <div class="pui-panel-title">
+                                <h1>主要特性</h1>
+                            </div>
+                            <div class="pui-panel-box">
+                                <ul>
+                                    <li>简单小巧，精简后只有4.58K，开启gzip后只有2.3K；</li>
+                                    <li>原生语法，高性能预编译和渲染模板 <a href="http://pandao.github.io/tiletemplate/tests/test-speed.html" title="(性能测试)" class="pui-link" target="_blank">（性能测试）</a>；</li>
+                                    <li>安全机制，过滤和转义危险语句<a href="http://pandao.github.io/tiletemplate/tests/test-xss-filter.html" title="(安全测试)" class="pui-link" target="_blank">（安全测试）</a>；</li>
+                                    <li>支持各种模块化标准（CommonJS / AMD / CMD 等）<a href="http://pandao.github.io/tiletemplate/examples/requirejs-test.html" class="pui-link" target="_blank">( Require.js示例 </a> 、<a href="http://pandao.github.io/tiletemplate/examples/seajs-test.html" class="pui-link" target="_blank">Sea.js示例 )</a>；</li>
+                                    <li>支持在 Node.js 环境下运行，同时也支持 Express.js；</li>
+                                    <li>支持调试，精确定位并通过控制台输出和显示错误或异常信息（<a href="http://pandao.github.io/tiletemplate/tests/test-debug.html" class="pui-link" target="_blank">查看调试</a>）；</li>
+                                    <li>支持所有主流的浏览器（IE6+）；</li>
+                                    <li>支持 include 和自定义标签语法；</li>
+                                </ul>
+                                <br/>
+                                <h3 class="pui-text-md">鸣谢</h3>
+                                <p>需要说明的是，tileTemplate 的诞生借鉴了 <a href="https://github.com/aui/artTemplate" target="_blank" title="artTemplate" class="pui-link">artTemplate <i class="fa fa-external-link"></i></a> 的实现原理，主要目的是学习原理及探索性能的最大优化。</p>
+                                <br/>
+                                <p>开发构建使用到的项目及工具：</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://github.com/adobe/brackets/" title="Adobe Brackets" class="pui-link" target="_blank">Brackets（推荐使用） <i class="fa fa-external-link"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://sass-lang.com/" title="Sass/Scss" target="_blank" class="pui-link">Sass/Scss <i class="fa fa-external-link"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://gruntjs.com/" title="Grunt.js" target="_blank" class="pui-link">Grunt.js <i class="fa fa-external-link"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pui-grid-xs-12 pui-grid-sm-4 pui-grid-md-4">
+                        <a name="download"></a>
+                        <div class="pui-panel pui-panel-simple">
+                            <div class="pui-panel-title">
+                                <h1>下载和安装</h1>
+                            </div>
+                            <div class="pui-panel-box">
+                                <p><a href="https://github.com/pandao/tileTemplate/archive/master.zip" class="pui-btn pui-bg-green pui-"><i class="fa fa-lg fa-github"></i> Github下载</a></p>
+                                <p>通过NPM安装：</p>
+                                <p><code>npm install tiletemplate</code></p>
+                                <br/>
+                                <p>通过Bower安装：</p>
+                                <p><code>bower install tiletemplate</code></p>
+                                <br/>
+                                <p><strong class="pui-text-md">更新日志：</strong></p>
+                                <p><a href="https://github.com/pandao/tileTemplate/blob/master/CHANGE.md" class="pui-link" target="_blank">CHANGES</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pui-grid-xs-12 pui-grid-sm-4 pui-grid-md-4">                
+                        <a name="license"></a>
+                        <div class="pui-panel pui-panel-simple">
+                            <div class="pui-panel-title">
+                                <h1>开源协议</h1>
+                            </div>
+                            <div class="pui-panel-box">
+                                <p>tileTemplate 遵循和使用 <a href="https://github.com/pandao/tileTemplate/blob/master/LICENSE" class="pui-link" target="_blank">MIT License</a> 开源协议，无论个人还是公司，都可以免费自由使用。</p>
+                                <div class="github-buttons">
+                                    <p>关注和贡献代码：</p>
+                                    <p><iframe src="https://ghbtns.com/github-btn.html?user=pandao&repo=tileTemplate&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></p>
+                                    <p><iframe src="https://ghbtns.com/github-btn.html?user=pandao&repo=tileTemplate&type=fork&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></p>
+                                    <p><iframe src="https://ghbtns.com/github-btn.html?user=pandao&repo=tileTemplate&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+</p>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <hr class="pui-hr pui-layout-fixed pui-layout-fixed-1200" />
+            <footer class="pui-layout pui-layout-fixed pui-layout-fixed-1200 page-footer pui-clear">
+                <h1 class="pui-text-green pui-text-lg pui-right">
+                    <p><i class="fa fa-lg fa-cube"></i> tileTemplate</p>
+                </h1>
+                <p>Copyright &copy; 2015 <a href="https://github.com/pandao/tileTemplate" class="pui-link" target="_blank">tileTemplate</a>, <a href="https://github.com/pandao/tileTemplate/blob/master/LICENSE" class="pui-link" target="_blank">MIT license.</a></p>
+                <p>Design & Develop By: <a href="https://github.com/pandao" class="pui-link" target="_blank">Pandao</a>
+                 <a href="https://github.com/pandao" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+                 <a href="http://weibo.com/ipandao" target="_blank"><i class="fa fa-weibo fa-lg pui-text-red"></i></a>&nbsp;&nbsp; 
+                 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254310986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1254310986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                </p>
+            </footer>
+        </div>
+        
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../planeui/vendors/html5shiv.min.js"></script>
+		<script type="text/javascript" src="../planeui/vendors/respond.min.js"></script>
+		<script type="text/javascript" src="../planeui/vendors/selectivizr.min.js"></script> 
+		<![endif]-->
+        
+		<script type="text/javascript" src="../editor.md/lib/prettify.min.js"></script>
+		<script type="text/javascript" src="../planeui/vendors/modernizr.min.js"></script>
+        <script src="tests/js/jquery.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
