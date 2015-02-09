@@ -44,10 +44,11 @@ $(function() {
             flowChart : true,
             sequenceDiagram : true,
             onfullscreen : function() {
-                this.editor.css("border-radius", 0);
+                this.editor.css("border-radius", 0).css("z-index", 120);
             },
             onfullscreenExit : function() {
                 this.editor.css({
+                    zIndex : 10,
                     border : "none",
                     "border-radius" : "5px"
                 });
