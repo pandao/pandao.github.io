@@ -34,13 +34,12 @@ $(function() {
     });
     
     var indexMarkdownEditor;
-    editormd.mathjaxURL = "http://cdn.bootcss.com/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     
     $.get('./index.md', function(md){
         indexMarkdownEditor = editormd("index-editormd", {
             height: 580,
             markdown : md,
-            mathjax : true,
+            tex : true,
             previewCodeHighlight : true,
             flowChart : true,
             sequenceDiagram : true,

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tex科学公式 - Editor.md examples</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+                <h1>Tex科学公式</h1>
+				<p>基于KaTeX.js：<a href="http://khan.github.io/KaTeX/" target="_blank">http://khan.github.io/KaTeX/</a></p>
+                <p>注：默认使用cloudflare的CDN，有时加载速度会比较慢，可自定义加载地址。</p>      
+            </header>
+            <div class="editormd" id="test-editormd">                
+                <script type="text/markdown">####科学公式
+                    
+$$E=mc^2$$
+
+行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。
+
+$$\(\sqrt{3x-1}+(1+x)^2\)$$
+                    
+$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$</script>
+            </div>
+        </div>
+        
+        <script src="../lib/jquery.min.js"></script>
+        <link rel="stylesheet" href="../dist/css/editormd.css" />
+        <script src="../src/js/editormd.js"></script>   
+        <script type="text/javascript">
+            $(function() {
+                /*
+                    默认使用cloudflare的CDN，有时加载速度会比较慢
+                    自定义KaTex的URL或者直接修改源码
+                
+                    editormd.katexURL = {
+                        js : ".....",
+                        css : "......"
+                    };
+                */
+
+                var testEditor = editormd("test-editormd", {
+                    width: "90%",
+                    height: 640,
+                    path : '../lib/',
+                    tex  : true
+                });
+            });
+        </script>
+    </body>
+</html>
