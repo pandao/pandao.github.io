@@ -40,6 +40,7 @@ $(function() {
             height: 580,
             markdown : md,
             tex : true,
+            htmlDecode : true,
             previewCodeHighlight : true,
             flowChart : true,
             sequenceDiagram : true,
