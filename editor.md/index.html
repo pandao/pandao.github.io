@@ -21,7 +21,11 @@
         <div class="pui-layout">
             <header class="pui-bg-blue page-header">
                 <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
-                    <h1 class="pui-text-center pui-text-xxxxxl page-title animated zoomInDown"><a href="./index.html" class="pui-text-white"><i class="fa fa-lg fa-edit"></i> Editor.md</a></h1>
+                    <h1 class="pui-text-center pui-text-xxxxxl page-title animated zoomInDown">
+                        <a href="./index.html" class="pui-text-white">
+                            <i class="editormd-logo editormd-logo-2x"></i><strong>Editor.md</strong>
+                        </a>
+                    </h1>
                     <p class="pui-text-center pui-text-xl animated zoomInDown">开源在线Markdown编辑器</p>
                     <menu class="pui-text-center page-menu animated zoomInDown">
                         <ul class="pui-menu pui-menu-inline pui-menu-radius">
@@ -29,48 +33,99 @@
                                 <a href="#download"><i class="fa fa-cloud-download"></i> 下载安装</a>
                             </li>
                             <li>
-                                <a href="https://pandao.github.io/editor.md/examples/index.html" target="_blank"><i class="fa fa-flask"></i> 使用示例 <i class="pui-arrow-down"></i></a>
+                                <a href="examples/index.html" target="_blank"><i class="fa fa-flask"></i> 使用示例 <i class="pui-arrow-down"></i></a>
                                 <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/simple.html" target="_blank">简单示例</a>
+                                        <a href="examples/simple.html" target="_blank">简单示例</a>
                                     </li>
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/use-requirejs.html" target="_blank">使用Require.js</a>
+                                        <a href="examples/full.html" target="_blank">完整示例</a>
                                     </li>
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/use-seajs.html" target="_blank">使用Sea.js</a>
+                                        <a href="examples/toc.html" target="_blank">ToC (Table of Contents)</a>
                                     </li>
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/toc.html" target="_blank">ToC (Table of Contents)</a>
+                                        <a href="examples/html-preview-markdown-to-html.html" target="_blank">Markdown To HTML</a>
+                                    </li>
+                                    <li>
+                                        <a href="examples/form-get-value.html" target="_blank">表单取值</a>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="javascript:;" target="_blank">使用Require.js、Sea.js和Zepto.js</a>
+                                        <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
+                                            <li>
+                                                <a href="examples/use-requirejs.html" target="_blank">使用Require.js</a>
+                                            </li>
+                                            <li>
+                                                <a href="examples/use-seajs.html" target="_blank">使用Sea.js</a>
+                                            </li>
+                                            <li>
+                                                <a href="examples/use-zepto.html" target="_blank">使用Zepto.js</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="has-submenu">
                                         <a href="javascript:;" target="_blank">事件处理</a>
                                         <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
                                             <li>
-                                                <a href="https://pandao.github.io/editor.md/examples/onload.html" target="_blank">onload</a>
+                                                <a href="examples/onload.html" target="_blank">onload</a>
                                             </li>
                                             <li>
-                                                <a href="https://pandao.github.io/editor.md/examples/onchange.html" target="_blank">onchange</a>
+                                                <a href="examples/onchange.html" target="_blank">onchange</a>
                                             </li>
                                             <li>
-                                                <a href="https://pandao.github.io/editor.md/examples/onfullscreen.html" target="_blank">onfullscreen</a>
+                                                <a href="examples/onfullscreen.html" target="_blank">onfullscreen</a>
                                             </li>
                                             <li>
-                                                <a href="https://pandao.github.io/editor.md/examples/onfullscreen.html" target="_blank">onfullscreenExit</a>
+                                                <a href="examples/onfullscreen.html" target="_blank">onfullscreenExit</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/katex.html" target="_blank">科学公式TeX (基于KaTeX)</a>
+                                        <a href="examples/html-tags-decode.html" target="_blank">识别和解析HTML标签</a>
                                     </li>
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/flowchart.html" target="_blank">流程图 (FlowChart)</a>
+                                        <a href="examples/custom-toolbar.html" target="_blank">自定义工具栏</a>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="javascript:;" target="_blank">图片上传</a>
+                                        <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
+                                            <li>
+                                                <a href="examples/image-upload.html" target="_blank">同域上传</a>
+                                            </li>
+                                            <li>
+                                                <a href="examples/image-cross-domain-upload.html" target="_blank">跨域上传</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="javascript:;" target="_blank">公式、流程图和时序图</a>
+                                        <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
+                                            <li>
+                                                <a href="examples/katex.html" target="_blank">科学公式TeX (基于KaTeX)</a>
+                                            </li>
+                                            <li>
+                                                <a href="examples/flowchart.html" target="_blank">流程图 (FlowChart)</a>
+                                            </li>
+                                            <li>
+                                                <a href="examples/sequence-diagram.html" target="_blank">时序图 (Sequence diagram)</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/sequence-diagram.html" target="_blank">时序图 (Sequence diagram)</a>
+                                        <a href="examples/dynamic-create-editormd.html" target="_blank">动态创建Editor.md</a>
                                     </li>
                                     <li>
-                                        <a href="https://pandao.github.io/editor.md/examples/html-preview-markdown-to-html.html" target="_blank">Markdown To HTML</a>
+                                        <a href="examples/readonly.html" target="_blank">只读模式</a>
+                                    </li>
+                                    <li>
+                                        <a href="examples/set-get-replace-selection.html" target="_blank">插入字符/设置和获取光标位置/设置、获取和替换选中的文本</a>
+                                    </li>
+                                    <li>
+                                        <a href="examples/multi-editormd.html" target="_blank">多个Editor.md并存</a>
+                                    </li>
+                                    <li>
+                                        <a href="examples/multi-languages.html" target="_blank">多语言支持</a>
                                     </li>
                                 </ul>
                             </li>
@@ -92,9 +147,7 @@
                         </ul>
                     </menu>   
                     <div class="page-header-container">
-                        <div class="editormd pui-z-depth-3" id="index-editormd">                
-                            <script type="text/markdown">###Hello world!</script>
-                        </div>                        
+                        <div class="editormd pui-z-depth-3 pui-bg-white" id="index-editormd"></div>                        
                     </div>
                 </div>
             </header>
@@ -107,6 +160,7 @@
                                 <h1>下载和安装</h1>
                             </div>
                             <div class="pui-panel-box">
+                                <p>最新版本： v1.1.0，更新于2015-02-15</p>
                                 <p><a href="https://github.com/pandao/editor.md/archive/master.zip" class="pui-btn pui-btn-secondary"><i class="fa fa-lg fa-github"></i> Github下载</a></p>
                                 <p>或者通过Bower安装：</p>
                                 <p><code>bower install editor.md</code></p>
@@ -196,8 +250,11 @@
             </div>
             <hr class="pui-hr pui-layout-fixed pui-layout-fixed-1200" />
             <footer class="pui-layout pui-layout-fixed pui-layout-fixed-1200 page-footer pui-clear">
-                <h1 class="pui-text-blue-600 pui-text-lg pui-right">
-                    <p><i class="fa fa-lg fa-edit"></i> Editor.md</p>
+                <h1 class="pui-text-lg pui-right pui-text-center">
+                    <p>
+                        <img src="dist/images/logos/editormd-logo-64x64.png"/>
+                        <span class="pui-block pui-text-gray">Editor.md</span>
+                    </p>
                 </h1>
                 <p>Copyright &copy; 2015 <a href="https://github.com/pandao/editor.md" class="pui-link" target="_blank">Editor.md</a>, <a href="https://github.com/pandao/editor.md/blob/master/LICENSE" class="pui-link" target="_blank">MIT license.</a></p>
                 <p>Design & Develop By: <a href="https://github.com/pandao" class="pui-link" target="_blank">Pandao</a>

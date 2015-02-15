@@ -14,7 +14,43 @@ body {
     padding: 5rem 0 10rem;
 }
 
+.page-header .editormd-logo {
+}
+
+.editormd-dialog {
+    line-height: 1.4;
+}
+
+.editormd-dialog-code-block {
+    height: 535px !important;
+}
+
+.editormd-dialog-tab-code-block {
+    height: 438px !important;
+}
+
+.editormd-code-toolbar select {
+    max-width: 36%;
+}
+
+.editormd-form label,
+.editormd-form input[type=text] {
+    margin-bottom: 0;
+}
+
+.pui-form textarea, textarea {
+    width: 100% !important;
+}
+
 .page-title {
+    margin-bottom: -25px;
+}
+
+.page-title strong {
+    margin-left: 10px;
+    font-size: 1.7em;
+    font-weight: normal;
+    margin-top: -8px;
 }
 
 .page-menu {
@@ -24,7 +60,6 @@ body {
 }
 
 .editormd {
-    z-index: 100;
     color: #666;
     border: none;
     -webkit-border-radius: 5px;
@@ -54,7 +89,7 @@ body {
 }
 
 .pui-menu-dropdown {
-    width: 200px;
+    width: 300px;
 } 
 
 .pui-menu-dropdown > li > a {
@@ -91,6 +126,11 @@ body {
 
 .page-footer a + a {
     margin-left: 8px;
+}
+
+.page-footer h1 {
+    margin-top: -20px;
+    line-height: 1.2;
 }
 
 #go-to-top {
