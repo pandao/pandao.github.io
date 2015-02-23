@@ -42,6 +42,12 @@ a {
 .pui-menu > li > a > .fa {
 }
 
+.editormd-logo {
+    font-size: 1.5em;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+}
+
 footer a + a {
     margin-left: 8px;
 }
