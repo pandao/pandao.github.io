@@ -1,18 +1,18 @@
 /*
  * Editor.md
  * @file        editormd.js 
- * @version     v1.1.0 
+ * @version     v1.1.3 
  * @description A simple online markdown editor.
  * @license     MIT License
  * @author      Pandao
  * {@link       https://github.com/pandao/editor.md}
- * @updateTime  2015-02-16
+ * @updateTime  2015-02-23
  */
 
 /** 
  * @fileOverview Editor.md
  * @author pandao
- * @version 1.1.0 
+ * @version 1.1.3
  */
 
 ;(function(factory) {
@@ -55,7 +55,7 @@
     };
     
     editormd.title       = editormd.$name = "Editor.md";
-    editormd.version     = "1.1.0";
+    editormd.version     = "1.1.3";
     editormd.homePage    = "https://pandao.github.io/editor.md/";
     editormd.classPrefix = "editormd-";  
     
@@ -1851,7 +1851,7 @@
             if(settings.watch) 
             {
                 codeMirror.width(editor.width() / 2);
-                preview.width(editor.width() / 2);
+                preview.width((!this.state.preview) ? editor.width() / 2 : editor.width());
                 
                 if (settings.toolbar && !settings.readOnly) {
                     preview.css("top", toolbar.height()).height(editor.height() - toolbar.height());
@@ -2022,7 +2022,7 @@
          */
         
         getHTML : function() {
-            if (!settings.saveHTMLToTextarea)
+            if (!this.settings.saveHTMLToTextarea)
             {
                 alert("Error: settings.saveHTMLToTextarea == false");
 
@@ -2047,14 +2047,14 @@
          */
         
         getPreviewedHTML : function() {
-            if (!settings.watch)
+            if (!this.settings.watch)
             {
                 alert("Error: settings.watch == false");
 
                 return false;
             }
             
-            return this.preivewContainer.html();
+            return this.previewContainer.html();
         },
         
         /**
@@ -2159,9 +2159,9 @@
             
             if (settings.toolbar) {
                 toolbar.toggle();
+                toolbar.find(".fa[name=preview]").toggleClass("active");
             }
-
-            toolbar.find(".fa[name=preview]").toggleClass("active");
+            
             codeMirror.toggle();
 
             if(codeMirror.css("display") === "none") // 为了兼容Zepto，而不使用codeMirror.is(":hidden")
@@ -2175,8 +2175,25 @@
                 editor.find("." + this.classPrefix + "preview-close-btn").show().bind(editormd.mouseOrTouch("click", "touchend"), function(){
                     _this.previewed();
                 });
+            
+                if(!settings.watch)
+                {
+                    var codeEditor       = this.codeEditor;
+                    var previewContainer = this.previewContainer;
+
+                    codeEditor.save();
+
+                    var markdownToC      = this.markdownToC   = [];
+                    var newMarkdownDoc   = editormd.$marked(codeEditor.getValue(), {renderer : editormd.markedRenderer(markdownToC)});
+                    previewContainer.html(newMarkdownDoc);
+
+                    if (settings.toc) {
+                        editormd.markdownToCRenderer(markdownToC, previewContainer, settings.tocStartLevel);
+                    }
+                }
 
                 preview.show().css({
+                    position  : "static",
                     top       : 0,
                     width     : editor.width(),
                     height    : editor.height()
@@ -2226,6 +2243,7 @@
             
             preview.css({ 
                 background : null,
+                position   : "absolute",
                 width      : editor.width() / 2,
                 height     : editor.height() - toolbar.height(),
                 top        : (settings.toolbar) ? toolbar.height() : 0
