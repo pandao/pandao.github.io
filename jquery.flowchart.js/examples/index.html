@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery.flowChart.js examples</title>
+        <link rel="stylesheet" href="css/style.css" />
+		<style>
+			.flowchart {
+				display: block;
+				text-align: center;
+				margin: 0 auto;
+			}
+		</style>
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+                <h1>jQuery.flowChart.js Examples</h1>
+                <p>Based on flowchart.js：<a href="http://adrai.github.io/flowchart.js/" target="_blank">http://adrai.github.io/flowchart.js/</a></p>        
+            </header>
+            <div class="flowchart">
+st=>start: User login
+op=>operation: Login operation
+cond=>condition: Login successful Yes or No?
+e=>end: Into admin panel
+
+st->op->cond
+cond(yes)->e
+cond(no)->op</div>
+           <div class="flowchart">
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes or No?:>http://www.google.com 
+io=>inputoutput: catch something...
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+           </div>
+        </div>
+        
+        <script src="js/raphael.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/flowchart.min.js"></script>
+        <script src="../src/jquery.flowchart.js"></script>
+        <script type="text/javascript">
+            $(function() {
+				$(".flowchart").flowChart({
+					"line-color"    : "red",
+					"element-color" : "red",
+					"symbols"       : {
+						"start"     : {
+							"element-color" : "red",
+							"fill"          : "red"
+						}
+					},
+				});
+            });
+        </script>
+    </body>
+</html>
