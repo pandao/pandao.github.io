@@ -38,7 +38,7 @@ package
 			
 			addChild(loadProgressText);
 			
-			var fullBg:FullscreenBackground = new FullscreenBackground(stage, "http://localhost/flite.as/examples/images/bg.jpg");
+			var fullBg:FullscreenBackground = new FullscreenBackground(stage, "https://pandao.github.io/flite.as/examples/images/bg.jpg");
 			
 			addChild(fullBg.image);
 			
