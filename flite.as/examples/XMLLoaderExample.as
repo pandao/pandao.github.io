@@ -13,9 +13,9 @@ package
 	 * @author Pandao
 	 */
 	
-	public class XMLLoderExample extends MovieClip
+	public class XMLLoaderExample extends MovieClip
 	{		
-		public function XMLLoderExample() : void
+		public function XMLLoaderExample() : void
 		{			
 			System.useCodePage           = false;		
 			stage.align                  = StageAlign.TOP_LEFT;
@@ -38,7 +38,7 @@ package
 			
 			addChild(text);
 			
-			var xmlLoader:XMLLoder = new XMLLoder("http://localhost/flite.as/examples/xml/config.xml");
+			var xmlLoader:XMLLoder = new XMLLoder("https://pandao.github.io/flite.as/examples/xml/config.xml");
 			
 			xmlLoader.onpreload = function(event:Event) 
 			{

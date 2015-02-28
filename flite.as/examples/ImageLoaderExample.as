@@ -48,7 +48,7 @@ package
 			
 			addChild(loadProgressText);
 			
-			var imageLoader:ImageLoader = new ImageLoader("http://localhost/flite.as/examples/images/bg.jpg");
+			var imageLoader:ImageLoader = new ImageLoader("https://pandao.github.io/flite.as/examples/images/bg.jpg");
 			
 			addChild(imageLoader.image);
 			
