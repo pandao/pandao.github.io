@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>ImageLoaderExample</title>
+		<style>
+			*{margin:0;padding:0;}
+			html, body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+		</style>
+		<script type="text/javascript" src="js/swfobject.min.js"></script>
+	</head>
+	<body>
+		<object id="test-swf" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%">
+			<param name="movie" value="ImageLoaderExample.swf" />
+			<param name="quality" value="high" />
+			<!-- <param name="wmode" value="transparent"> -->
+			<param name="allowFullScreen" value="true" />
+			<param name="allowScriptAccess" value="always" />
+			<param name="swfversion" value="6.0.65.0" />
+			<param name="menu" value="true" />
+			<param name="expressinstall" value="js/expressInstall.swf" />
+			<!--[if !IE]>-->
+			<object type="application/x-shockwave-flash" data="ImageLoaderExample.swf" width="100%" height="100%">
+			<!--<![endif]-->
+				<param name="quality" value="high" />
+				<param name="menu" value="true" />
+				<!-- <param name="wmode" value="transparent"> -->
+				<param name="allowScriptAccess" value="always" />
+				<param name="swfversion" value="6.0.65.0" />
+				<param name="allowFullScreen" value="true" />
+				<param name="expressinstall" value="js/expressInstall.swf" />
+				<div>
+					<h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+					<p>
+						<a href="http://www.adobe.com/go/getflashplayer">
+							<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+						</a>
+					</p>
+				</div>
+			<!--[if !IE]>-->
+			</object>
+			<!--<![endif]-->
+		</object>
+		<script type="text/javascript">
+			swfobject.registerObject("test-swf");
+		</script>
+	</body>
+</html>

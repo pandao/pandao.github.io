@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<params id="version" value="V1.0" />
+	<params id="domain" value="www.xxx.com" />
+	<slides delayTime="2000">
+		<items url="index_slide_1.swf" />
+		<items url="index_slide_2.swf" />
+		<items url="index_slide_3.swf" />
+		<items url="index_slide_4.swf" />
+		<items url="index_slide_5.swf" />
+		<items url="index_slide_6.swf" />
+	</slides>
+</root>
