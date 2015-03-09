@@ -1,24 +1,37 @@
 ###Features
 
 - Support Standard Markdown and GFM(GitHub Flavored Markdown);
-- Full-featured: Real-time Preview, Image (cross-domain) upload, Multi-languages, Syntax highlighting...;
-- Support ToC (Table of Contents);
+- Full-featured: Real-time Preview, Image (cross-domain) upload, Preformatted text/Code blocks/Tables insert, Code fold, Search replace, Read only, Themes, Multi-languages, L18n, HTML entities, Code syntax highlighting...;
+- Markdown Extras : Support ToC (Table of Contents), Emoji, Task lists, @Links...;
 - Compatible with all major browsers (IE8+), compatible Zepto.js and iPad;
-- Support identification and interpretation of the HTML tags;
-- Support TeX (LaTeX expressions, Based on KaTeX);
-- Support Flowchart and Sequence Diagram of Markdown extended syntax;
-- Support AMD/CMD (Require.js & Sea.js) Module Loader;
+- Support identification, interpretation, fliter of the HTML tags;
+- Support TeX (LaTeX expressions, Based on KaTeX), Flowchart and Sequence Diagram of Markdown extended syntax;
+- Support AMD/CMD (Require.js & Sea.js) Module Loader, and Custom/define editor plugins;
 
 **Table of Contents**
 
 [TOC]
 
 #H1 header
-##H2 header               
+##H2 header
 ###H3 header
 ####H4 header
 #####H5 header
 ######H6 header
+#Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+##Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+###Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+####Heading 4 link [Heading link](https://github.com/pandao/editor.md "Heading link") Heading link [Heading link](https://github.com/pandao/editor.md "Heading link")
+#####Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+######Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+
+##Headers (Underline)
+
+H1 Header (Underline)
+=============
+
+H2 Header (Underline)
+-------------
 
 ###Characters
                 
@@ -54,6 +67,8 @@ Paragraphs and Line Breaks
 [Reference link][id/name] 
 
 [id/name]: http://link-url/
+
+GFM a-tail link @pandao
 
 ###Code Blocks (multi-language) & highlighting
 
@@ -134,11 +149,21 @@ testBox.add("jQuery").remove("jQuery");
 
 ###Images
 
-![ddd](./images/X7t2gyC.png)
+Image:
 
-Image Link:
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 
-[![xxx](http://i.imgur.com/5MCMHPl.png)](http://i.imgur.com/5MCMHPl.png)
+> Follow your heart.
+
+![](https://pandao.github.io/editor.md/examples/images/8.jpg)
+
+> 图为：厦门白城沙滩 Xiamen
+
+图片加链接 (Image + Link)：
+
+[![](images/7.jpg)](images/7.jpg "李健首张专辑《似水流年》封面")
+
+> 图为：李健首张专辑《似水流年》封面
                 
 ----
 
@@ -216,19 +241,37 @@ X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
 
 18&ordm;C  &quot;  &apos;
 
-##Headers (Underline)
-
-H1 Header (Underline)
-=============
-
-H2 Header (Underline)
--------------
-
 ##Escaping for Special Characters
 
 \*literal asterisks\*
 
-##Markdown extended
+##Markdown extras
+
+###GFM task list
+
+- [x] GFM task list 1
+- [x] GFM task list 2
+- [ ] GFM task list 3
+    - [ ] GFM task list 3-1
+    - [ ] GFM task list 3-2
+    - [ ] GFM task list 3-3
+- [ ] GFM task list 4
+    - [ ] GFM task list 4-1
+    - [ ] GFM task list 4-2
+
+###Emoji mixed :smiley:
+
+> Blockquotes :star:
+
+####GFM task lists & Emoji & fontAwesome icon emoji & editormd logo emoji :editormd-logo-5x:
+
+- [x] :smiley: @mentions, :smiley: #refs, [links](), **formatting**, and <del>tags</del> supported :editormd-logo:;
+- [x] list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;
+- [x] [ ] :smiley: this is a complete item :smiley:;
+- [ ] []this is an incomplete item [test link](#) :fa-star: @pandao; 
+- [ ] [ ]this is an incomplete item :fa-star: :fa-gear:;
+    - [ ] :smiley: this is an incomplete item [test link](#) :fa-star: :fa-gear:;
+    - [ ] :smiley: this is  :fa-star: :fa-gear: an incomplete item [test link](#);
             
 ###TeX(LaTeX)
    

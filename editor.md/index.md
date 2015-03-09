@@ -1,24 +1,43 @@
 ###主要特性
 
-- 支持Markdown标准和Github风格；
-- 支持实时预览、图片（跨域）上传和多语言语法高亮；
-- 支持ToC（Table of Contents）；
+- 支持“标准”Markdown和Github风格的语法，也可变身为代码编辑器；
+- 支持实时预览、图片（跨域）上传、预格式文本/代码/表格插入、代码折叠、搜索替换、只读模式、自定义样式主题和多语言语法高亮等功能；
+- 支持ToC（Table of Contents）、Emoji表情、Task lists、@链接等Markdown扩展语法；
+- 支持TeX科学公式（基于KaTeX）、流程图 Flowchart 和 时序图 Sequence Diagram;
+- 支持识别和解析HTML标签，并且支持自定义过滤标签解析，具有可靠的安全性和几乎无限的扩展性；
+- 支持 AMD / CMD 模块化加载（支持 Require.js & Sea.js），并且支持自定义扩展插件；
 - 兼容主流的浏览器（IE8+）和Zepto.js，且支持iPad等平板设备；
-- 支持识别和解析HTML标签，具有几乎无限的扩展性；
-- 支持TeX科学公式（基于KaTeX）；
-- 支持流程图 flowchart 和时序图 sequenceDiagram;
-- 支持AMD/CMD模块化加载（支持 Require.js & Sea.js）；
 
-**目录**
+# Editor.md
+
+![](https://pandao.github.io/editor.md/dist/images/logos/editormd-logo-180x180.png)
+
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
+
+**目录 (Table of Contents)**
 
 [TOC]
 
-#Hello world!
-##Hello world!                
-###Hello world!
-####Hello world!
-#####Hello world!
-######Hello world!
+#Heading 1
+##Heading 2
+###Heading 3
+####Heading 4
+#####Heading 5
+######Heading 6
+#Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+##Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+###Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+####Heading 4 link [Heading link](https://github.com/pandao/editor.md "Heading link") Heading link [Heading link](https://github.com/pandao/editor.md "Heading link")
+#####Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+######Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+
+####标题（用底线的形式）Heading (underline)
+
+This is an H1
+=============
+
+This is an H2
+-------------
 
 ###字符效果和横线等
                 
@@ -37,15 +56,15 @@
 
 The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
 
-###引用
+###引用 Blockquotes
 
-> 引用文本
+> 引用文本 Blockquotes
 
-引用的行内混合
+引用的行内混合 Blockquotes
                     
 > 引用：如果想要插入空白换行`即<br />标签`，在插入处先键入两个以上的空格然后回车即可，[普通链接](http://localhost/)。
 
-###锚点与链接
+###锚点与链接 Links
 
 [普通链接](http://localhost/)
 
@@ -57,9 +76,13 @@ The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is mainta
 
 [anchor-id]: http://www.this-anchor-link.com/
 
-###多语言代码高亮
+GFM a-tail link @pandao
 
-####行内代码
+> @pandao
+
+###多语言代码高亮 Codes
+
+####行内代码 Inline code
 
 执行命令：`npm install marked`
 
@@ -119,7 +142,7 @@ var testBox = box();
 testBox.add("jQuery").remove("jQuery");
 ```
 
-####HTML代码
+####HTML代码 HTML codes
 
 ```html
 <!DOCTYPE html>
@@ -134,31 +157,41 @@ testBox.add("jQuery").remove("jQuery");
 </html>
 ```
 
-###图片
+###图片 Images
 
-![ddd](./images/X7t2gyC.png)
+Image:
 
-图片加链接：
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 
-[![xxx](http://i.imgur.com/5MCMHPl.png)](http://i.imgur.com/5MCMHPl.png)
+> Follow your heart.
+
+![](https://pandao.github.io/editor.md/examples/images/8.jpg)
+
+> 图为：厦门白城沙滩
+
+图片加链接 (Image + Link)：
+
+[![](images/7.jpg)](images/7.jpg "李健首张专辑《似水流年》封面")
+
+> 图为：李健首张专辑《似水流年》封面
                 
 ----
 
-###列表
+###列表 Lists
 
-####无序列表（减号）
+####无序列表（减号）Unordered Lists (-)
                 
 - 列表一
 - 列表二
 - 列表三
      
-####无序列表（星号）
+####无序列表（星号）Unordered Lists (*)
 
 * 列表一
 * 列表二
 * 列表三
 
-####无序列表（加号和嵌套）
+####无序列表（加号和嵌套）Unordered Lists (+)
                 
 + 列表一
 + 列表二
@@ -170,15 +203,27 @@ testBox.add("jQuery").remove("jQuery");
     * 列表二
     * 列表三
 
-####有序列表
+####有序列表 Ordered Lists (-)
                 
 1. 第一行
 2. 第二行
 3. 第三行
+
+####GFM task list
+
+- [x] GFM task list 1
+- [x] GFM task list 2
+- [ ] GFM task list 3
+    - [ ] GFM task list 3-1
+    - [ ] GFM task list 3-2
+    - [ ] GFM task list 3-3
+- [ ] GFM task list 4
+    - [ ] GFM task list 4-1
+    - [ ] GFM task list 4-2
                 
 ----
                     
-###绘制表格
+###绘制表格 Tables
 
 | 项目        | 价格   |  数量  |
 | --------   | -----:  | :----:  |
@@ -201,6 +246,12 @@ Content Cell  | Content Cell
 | `help()`      | Display the help window.       |
 | `destroy()`   | **Destroy your computer!**     |
 
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+
 | Item      | Value |
 | --------- | -----:|
 | Computer  | $1600 |
@@ -209,7 +260,7 @@ Content Cell  | Content Cell
                 
 ----
 
-####特殊符号
+####特殊符号 HTML Entities Codes
 
 &copy; &  &uml; &trade; &iexcl; &pound;
 &amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot; 
@@ -218,19 +269,25 @@ X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
 
 18&ordm;C  &quot;  &apos;
 
-####标题（用底线的形式）
+###Emoji表情 :smiley:
 
-This is an H1
-=============
+> Blockquotes :star:
 
-This is an H2
--------------
+####GFM task lists & Emoji & fontAwesome icon emoji & editormd logo emoji :editormd-logo-5x:
 
-####反斜杠
+- [x] :smiley: @mentions, :smiley: #refs, [links](), **formatting**, and <del>tags</del> supported :editormd-logo:;
+- [x] list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;
+- [x] [ ] :smiley: this is a complete item :smiley:;
+- [ ] []this is an incomplete item [test link](#) :fa-star: @pandao; 
+- [ ] [ ]this is an incomplete item :fa-star: :fa-gear:;
+    - [ ] :smiley: this is an incomplete item [test link](#) :fa-star: :fa-gear:;
+    - [ ] :smiley: this is  :fa-star: :fa-gear: an incomplete item [test link](#);
+ 
+####反斜杠 Escape
 
 \*literal asterisks\*
             
-###科学公式
+###科学公式 TeX(KaTeX)
                     
 $$E=mc^2$$
 
@@ -240,7 +297,7 @@ $$\(\sqrt{3x-1}+(1+x)^2\)$$
                     
 $$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
                 
-###绘制流程图
+###绘制流程图 Flowchart
 
 ```flow
 st=>start: 用户登陆
@@ -252,8 +309,8 @@ st->op->cond
 cond(yes)->e
 cond(no)->op
 ```
-
-###绘制序列图
+                    
+###绘制序列图 Sequence Diagram
                     
 ```seq
 Andrew->China: Says Hello 
@@ -262,4 +319,4 @@ China-->Andrew: How are you?
 Andrew->>China: I am good thanks!
 ```
 
-###结束
+###结束 End

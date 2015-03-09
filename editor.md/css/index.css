@@ -157,6 +157,10 @@ body {
     -webkit-touch-callout: none;
 }
 
+.editormd-form input[type=number] {
+    width: 54px;
+}
+
 code {
     color: #999;
     background: #eee;
