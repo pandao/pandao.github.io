@@ -56,7 +56,7 @@ body {
 
 .page-menu {
     position: relative;
-    z-index: 101;
+    z-index: 100;
     padding-bottom: 2rem;
 }
 
