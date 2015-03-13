@@ -37,17 +37,16 @@ $(function() {
     
     $.get('./index.md', function(md){
         indexMarkdownEditor = editormd("index-editormd", {
-            height: 580,
-            markdown : md,
-            tex : true,
-            emoji : true,
-            taskList : true,
-            codeFold : true,
-            searchReplace : true,
-            htmlDecode : true,
-            previewCodeHighlight : true,
-            flowChart : true,
-            sequenceDiagram : true,
+            height           : 580,
+            markdown         : md,
+            tex              : true,
+            emoji            : true,
+            taskList         : true,
+            codeFold         : true,
+            searchReplace    : true,
+            htmlDecode       : "style,script,iframe",
+            flowChart        : true,
+            sequenceDiagram  : true,
             onfullscreen : function() {
                 this.editor.css("border-radius", 0).css("z-index", 120);
             },
