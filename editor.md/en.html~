@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +9,7 @@
         <meta name="keywords" content="Editor.md" />
         <meta name="description" content="Editor.md: a simple online markdown editor." />
 	    <meta name="author" content="pandao, pandao@vip.qq.com" />
-        <title>Editor.md - 开源在线Markdown编辑器</title>
+        <title>Editor.md - Open source online Markdown editor.</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../planeui/vendors/animate.min.css" />
         <link rel="stylesheet" type="text/css" href="../planeui/dist/css/planeui.min.css" />
@@ -27,26 +27,26 @@
                             <i class="editormd-logo editormd-logo-2x"></i><strong>Editor.md</strong>
                         </a>
                     </h1>
-                    <p class="pui-text-center pui-text-xl animated zoomInDown">开源在线Markdown编辑器</p>
-                    <div class="pui-text-center page-menu animated zoomInDown">
+                    <p class="pui-text-center pui-text-xl animated zoomInDown">Open source online Markdown editor.</p>
+                    <menu class="pui-text-center page-menu animated zoomInDown">
                         <ul class="pui-menu pui-menu-inline pui-menu-radius">
                             <li>
-                                <a href="#download"><i class="fa fa-cloud-download"></i> 下载安装</a>
+                                <a href="#download"><i class="fa fa-cloud-download"></i> Download</a>
                             </li>
                             <li>
-                                <a href="examples/index.html" target="_blank"><i class="fa fa-flask"></i> 使用示例 <i class="pui-arrow-down"></i></a>
+                                <a href="examples/index.html" target="_blank"><i class="fa fa-flask"></i> Examples <i class="pui-arrow-down"></i></a>
                                 <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
                                     <li>
-                                        <a href="examples/simple.html" target="_blank">简单示例</a>
+                                        <a href="examples/simple.html" target="_blank">Simple example</a>
                                     </li>
                                     <li>
-                                        <a href="examples/full.html" target="_blank">完整示例</a>
+                                        <a href="examples/full.html" target="_blank">Full example</a>
                                     </li>
                                     <li>
                                         <a href="examples/html-preview-markdown-to-html.html" target="_blank">Markdown To HTML</a>
                                     </li>
                                     <li>
-                                        <a href="examples/form-get-value.html" target="_blank">表单取值</a>
+                                        <a href="examples/form-get-value.html" target="_blank">Get value on Form</a>
                                     </li>
                                     <li class="has-submenu">
                                         <a href="javascript:;" target="_blank">Markdown Extras</a>
@@ -61,74 +61,74 @@
                                                 <a href="examples/emoji.html" target="_blank">Emoji</a>
                                             </li>
                                             <li>
-                                                <a href="examples/@links.html" target="_blank">@链接</a>
+                                                <a href="examples/@links.html" target="_blank">@Links</a>
                                             </li>
                                             <li>
-                                                <a href="examples/katex.html" target="_blank">TeX科学公式 (基于KaTeX)</a>
+                                                <a href="examples/katex.html" target="_blank">TeX (KaTeX)</a>
                                             </li>
                                             <li>
-                                                <a href="examples/flowchart.html" target="_blank">流程图 (FlowChart)</a>
+                                                <a href="examples/flowchart.html" target="_blank">FlowChart</a>
                                             </li>
                                             <li>
-                                                <a href="examples/sequence-diagram.html" target="_blank">时序图 (Sequence diagram)</a>
+                                                <a href="examples/sequence-diagram.html" target="_blank">Sequence diagram</a>
                                             </li>
                                             <li>
-                                                <a href="examples/html-tags-decode.html" target="_blank">识别和解析HTML标签</a>
+                                                <a href="examples/html-tags-decode.html" target="_blank">HTML tags decode</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="javascript:;" target="_blank">自定义 Editor.md</a>
+                                        <a href="javascript:;" target="_blank">Custom Editor.md</a>
                                         <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
                                             <li>
-                                                <a href="examples/define-plugin.html" target="_blank">自定义插件</a>
+                                                <a href="examples/define-plugin.html" target="_blank">Define plugin</a>
                                             </li>
                                             <li>
-                                                <a href="examples/themes.html" target="_blank">自定义编辑器样式主题</a>
+                                                <a href="examples/themes.html" target="_blank">Custom editor theme</a>
                                             </li>
                                             <li>
-                                                <a href="examples/custom-toolbar.html" target="_blank">自定义工具栏</a>
+                                                <a href="examples/custom-toolbar.html" target="_blank">Custom toolbar</a>
                                             </li>
                                             <li>
-                                                <a href="examples/custom-keyboard-shortcuts.html" target="_blank">自定义键盘快捷键</a>
+                                                <a href="examples/custom-keyboard-shortcuts.html" target="_blank">Custom keyboard shortcuts</a>
                                             </li>
                                             <li>
-                                                <a href="examples/change-mode.html" target="_blank">变身为代码编辑器 (Change mode)</a>
+                                                <a href="examples/change-mode.html" target="_blank">Change mode</a>
                                             </li>
                                             <li>
-                                                <a href="examples/manually-load-modules.html" target="_blank">手动加载依赖模块文件</a>
+                                                <a href="examples/manually-load-modules.html" target="_blank">Manually load modules</a>
                                             </li>
                                             <li>
-                                                <a href="examples/multi-editormd.html" target="_blank">多个Editor.md并存</a>
+                                                <a href="examples/multi-editormd.html" target="_blank">Multi Editor.md</a>
                                             </li>
                                             <li>
-                                                <a href="examples/readonly.html" target="_blank">只读模式</a>
+                                                <a href="examples/readonly.html" target="_blank">Read only mode</a>
                                             </li>
                                             <li>
-                                                <a href="examples/code-fold.html" target="_blank">代码折叠功能</a>
+                                                <a href="examples/code-fold.html" target="_blank">Code fold</a>
                                             </li>
                                             <li>
-                                                <a href="examples/external-use.html" target="_blank">外部使用工具栏的操作方法和对话框</a>
+                                                <a href="examples/external-use.html" target="_blank">External using method</a>
                                             </li>
                                             <li>
-                                                <a href="examples/multi-languages.html" target="_blank">多语言支持</a>
+                                                <a href="examples/multi-languages.html" target="_blank">Multi-languages</a>
                                             </li>
                                             <li>
-                                                <a href="examples/auto-height.html" target="_blank">自动高度</a>
+                                                <a href="examples/auto-height.html" target="_blank">Auto height</a>
                                             </li>
                                             <li>
-                                                <a href="examples/dynamic-create-editormd.html" target="_blank">动态创建Editor.md</a>
+                                                <a href="examples/dynamic-create-editormd.html" target="_blank">Dynamic create Editor.md</a>
                                             </li>
                                             <li>
-                                                <a href="examples/search-replace.html" target="_blank">搜索替换功能</a>
+                                                <a href="examples/search-replace.html" target="_blank">Search / Replace</a>
                                             </li>
                                             <li>
-                                                <a href="examples/set-get-replace-selection.html" target="_blank">插入字符/设置和获取光标位置/设置、获取和替换选中的文本</a>
+                                                <a href="examples/set-get-replace-selection.html" target="_blank">Insert value, Set/Get/Replace selection text</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="javascript:;" target="_blank">事件处理</a>
+                                        <a href="javascript:;" target="_blank">Event handle</a>
                                         <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
                                             <li>
                                                 <a href="examples/on-off.html" target="_blank">On / Off (bind/unbind)</a>
@@ -152,48 +152,48 @@
                                                 <a href="examples/onwatch-onunwatch.html" target="_blank">Onwatch / Onunwatch</a>
                                             </li>
                                             <li>
-                                                <a href="examples/onscroll-onpreviewscroll.html" target="_blank">Onscroll / Onpreviewscroll</a>
+                                                <a href="onscroll-onpreviewscroll.html" target="_blank">Onscroll / Onpreviewscroll</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="javascript:;" target="_blank">图片上传</a>
+                                        <a href="javascript:;" target="_blank">Image upload</a>
                                         <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
                                             <li>
-                                                <a href="http://www.ipandao.com/editor.md/examples/image-upload.html" target="_blank">同域上传</a>
+                                                <a href="http://www.ipandao.com/editor.md/examples/image-upload.html" target="_blank">Same domain upload</a>
                                             </li>
                                             <li>
-                                                <a href="http://www.ipandao.com/editor.md/examples/image-cross-domain-upload.html" target="_blank">跨域上传</a>
+                                                <a href="http://www.ipandao.com/editor.md/examples/image-cross-domain-upload.html" target="_blank">Cross-domain upload</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="javascript:;" target="_blank">使用Require.js、Sea.js和Zepto.js</a>
+                                        <a href="javascript:;" target="_blank">Using Require.js, Sea.js, Zepto.js</a>
                                         <ul class="pui-menu pui-menu-dropdown pui-z-depth-2">
                                             <li>
-                                                <a href="examples/use-requirejs.html" target="_blank">使用Require.js</a>
+                                                <a href="examples/use-requirejs.html" target="_blank">Using Require.js</a>
                                             </li>
                                             <li>
-                                                <a href="examples/use-seajs.html" target="_blank">使用Sea.js</a>
+                                                <a href="examples/use-seajs.html" target="_blank">Using Sea.js</a>
                                             </li>
                                             <li>
-                                                <a href="examples/use-zepto.html" target="_blank">使用Zepto.js</a>
+                                                <a href="examples/use-zepto.html" target="_blank">Using Zepto.js</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="examples/index.html" target="_blank">更多示例...</a>
+                                        <a href="examples/index.html" target="_blank">More...</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#dependents"><i class="fa fa-gears"></i> 依赖项目</a>
+                                <a href="#dependents"><i class="fa fa-gears"></i> Dependents</a>
                             </li>
                             <li>
                                 <a href="#license"><i class="fa fa-check"></i> License</a>
                             </li>
                             <li>
-                                <a href="https://github.com/pandao/editor.md/blob/master/CHANGE.md" target="_blank"><i class="fa fa-refresh"></i> 更新记录</a>
+                                <a href="https://github.com/pandao/editor.md/blob/master/CHANGE.md" target="_blank"><i class="fa fa-refresh"></i> Changes</a>
                             </li>
                             <li>
                                 <a href="https://github.com/pandao/editor.md/issues" target="_blank"><i class="fa fa-question-circle"></i> Issues</a>
@@ -205,10 +205,10 @@
                                 <a href="http://git.oschina.net/pandao/editor.md" target="_blank"><i class="fa fa-git"></i> Git@OSC</a>
                             </li>
                             <li>
-                                <a href="en.html"><i class="fa fa-language"></i> English</a>
+                                <a href="index.html"><i class="fa fa-language"></i> 中文版</a>
                             </li>
                         </ul>
-                    </div>
+                    </menu>   
                     <div class="page-header-container">
                         <div class="editormd pui-z-depth-3 pui-bg-white" id="index-editormd"></div>                        
                     </div>
@@ -220,19 +220,19 @@
                         <a name="download"></a>
                         <div class="pui-panel pui-panel-simple">
                             <div class="pui-panel-title">
-                                <h1>下载和安装</h1>
+                                <h1>Download & install</h1>
                             </div>
                             <div class="pui-panel-box">
-                                <p>最新版本： v1.4.0，更新于2015-03-23</p>
-                                <p><a href="https://github.com/pandao/editor.md/archive/master.zip" class="pui-btn pui-btn-secondary"><i class="fa fa-lg fa-github"></i> Github下载</a></p>
+                                <p>Latest version: v1.4.0，Update: 2015-03-23</p>
+                                <p><a href="https://github.com/pandao/editor.md/archive/master.zip" class="pui-btn pui-btn-secondary"><i class="fa fa-lg fa-github"></i> Github download</a></p>
                                 <br/>
                                 <p><img src="https://img.shields.io/github/tag/pandao/editor.md.svg" /> <img src="https://img.shields.io/github/release/pandao/editor.md.svg" /></p>
                                 <br/>
-                                <p>或者通过Bower安装：</p>
+                                <p>Or Bower install: </p>
                                 <p><code>bower install editor.md</code></p>
                                 <p><img src="https://img.shields.io/bower/v/editor.md.svg" /></p>
                                 <br/>
-                                <p><strong class="pui-text-md">更新日志：</strong></p>
+                                <p><strong class="pui-text-md">Change logs: </strong></p>
                                 <p><a href="https://github.com/pandao/editor.md/blob/master/CHANGE.md" class="pui-link" target="_blank">CHANGES</a></p>
                             </div>
                         </div>
@@ -241,10 +241,10 @@
                         <a name="dependents"></a>
                         <div class="pui-panel pui-panel-simple">
                             <div class="pui-panel-title">
-                                <h1>依赖项目</h1>
+                                <h1>Dependents</h1>
                             </div>
                             <div class="pui-panel-box">
-                                <p>Editor.md 的诞生依赖于以下开源项目：</p>
+                                <p>Projects :</p>
                                 <ul>
                                     <li>
                                         <a href="http://codemirror.net/" title="CodeMirror" target="_blank">CodeMirror</a>
@@ -281,10 +281,10 @@
                                     </li>
                                 </ul>
                                 <br/>
-                                <p>开发构建使用到的项目及工具：</p>
+                                <p>Development tools :</p>
                                 <ul>
                                     <li>
-                                        <a href="https://github.com/adobe/brackets/" title="Adobe Brackets" target="_blank">Brackets（推荐使用）</a>
+                                        <a href="https://github.com/adobe/brackets/" title="Adobe Brackets" target="_blank">Brackets</a>
                                     </li>
                                     <li>
                                         <a href="http://sass-lang.com/" title="Sass/Scss" target="_blank">Sass/Scss</a>
@@ -300,15 +300,15 @@
                         <a name="license"></a>
                         <div class="pui-panel pui-panel-simple">
                             <div class="pui-panel-title">
-                                <h1>开源协议</h1>
+                                <h1>License</h1>
                             </div>
                             <div class="pui-panel-box">
-                                <p>Editor.md 建立在众多优秀的开源组件基础之上，遵循和使用 <a href="https://github.com/pandao/editor.md/blob/master/LICENSE" class="pui-link" target="_blank">MIT License</a> 开源协议，无论个人还是公司，都可以免费自由使用。</p>
+                                <p>Editor.md follows the <a href="https://github.com/pandao/editor.md/blob/master/LICENSE" class="pui-link" target="_blank">MIT License</a>, Anyone can freely use.</p>
                                 <br/>
-                                <p><a href="https://github.com/pandao/editor.md/issues/new" class="pui-btn pui-btn-secondary" target="_blank" title="提交Bug或建议"><i class="fa fa-lg fa-github"></i> 提交Bug或建议</a></p>
+                                <p><a href="https://github.com/pandao/editor.md/issues/new" class="pui-btn pui-btn-secondary" target="_blank" title="Submit bugs or new issues"><i class="fa fa-lg fa-github"></i> Submit bugs or new issues</a></p>
                                 <p><img src="https://img.shields.io/github/issues/pandao/editor.md.svg" /></p>
                                 <div class="github-buttons">
-                                    <p>关注和贡献代码：</p>
+                                    <p>Fork me on Github :</p>
                                     <p><iframe src="https://ghbtns.com/github-btn.html?user=pandao&repo=editor.md&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></p>
                                     <p><iframe src="https://ghbtns.com/github-btn.html?user=pandao&repo=editor.md&type=fork&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></p>
                                     <p><iframe src="https://ghbtns.com/github-btn.html?user=pandao&repo=editor.md&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
@@ -343,8 +343,9 @@
 		<![endif]-->
         
 		<script type="text/javascript" src="../planeui/vendors/modernizr.min.js"></script>
-        <script src="examples/js/jquery.min.js"></script>
+        <script src="examples/js/jquery.min.js"></script> 
         <script src="editormd.min.js"></script>   
-        <script src="js/index.js"></script>
+        <script src="languages/en.js"></script>
+        <script src="js/index-en.js"></script>
     </body>
 </html>
