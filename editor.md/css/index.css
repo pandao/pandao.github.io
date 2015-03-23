@@ -10,6 +10,11 @@ body {
     text-align: center;
 }
 
+::-webkit-scrollbar {
+    width: 7px;
+    height: auto;
+}
+
 .page-header {
     padding: 5rem 0 10rem;
 }
