@@ -872,7 +872,7 @@
          * @returns {editormd}                  this(editormd instance object.)
          */
         
-        extend : function() {
+        extends : function() {
             if (typeof arguments[1] !== "undefined")
             {
                 if (typeof arguments[1] === "function")
