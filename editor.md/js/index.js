@@ -40,6 +40,7 @@ $(function() {
             height           : 580,
             markdown         : md,
             tex              : true,
+            tocm             : true,
             emoji            : true,
             taskList         : true,
             codeFold         : true,
