@@ -157,8 +157,16 @@ body {
     -webkit-touch-callout: none;
 }
 
+.editormd-form input {
+    margin-bottom: 0;
+}
+
 .editormd-form input[type=number] {
     width: 54px;
+}
+
+.editormd-goto-line-dialog p {
+    margin-bottom: 0;
 }
 
 code {
