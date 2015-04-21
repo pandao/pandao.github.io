@@ -418,3 +418,20 @@ v1.2.0 主要更新：
     - 新增插入分页符的快捷键`Shift + Alt + P`；
 - 修复一些Bug，包括[#51](https://github.com/pandao/editor.md/issues/51)等；
 - 新增和修改以上更新的相关示例；
+
+####v1.4.1
+
+- 新增配置项`syncScrolling`，即是否开启同步滚动预览，默认值为`false`； 
+- 修复Bug [＃64](https://github.com/pandao/editor.md/issues/64)；
+    - 更新`editormd.katexURL`资源地址的默认值，即更新版本为`0.3.0`； 
+    - 新增测试用例`tests/katex-tests.html`；
+    - 修改示例文件`examples/katex.html`； 
+- 修复Bug [＃66](https://github.com/pandao/editor.md/issues/66)；
+- 修复编辑器工具栏按钮`:hover` CSS3 transition无效的问题； 
+- 修改`README.md`；
+
+####v1.4.2
+
+- 改进和增强自定义工具栏功能，支持图标按钮右对齐[#69](https://github.com/pandao/editor.md/issues/69)；
+- 改进和增强HTML标签的解析过滤功能，支持过滤指定的属性等[#70](https://github.com/pandao/editor.md/issues/70)；
+- 删除分支`mathjax-version`和`v1.1.9`；
