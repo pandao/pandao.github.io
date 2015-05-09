@@ -2,12 +2,12 @@
  * Editor.md
  *
  * @file        editormd.amd.js 
- * @version     v1.4.3 
+ * @version     v1.4.4 
  * @description Open source online markdown editor.
  * @license     MIT License
  * @author      Pandao
  * {@link       https://github.com/pandao/editor.md}
- * @updateTime  2015-05-06
+ * @updateTime  2015-05-09
  */
 
 ;(function(factory) {
@@ -129,7 +129,7 @@
     };
     
     editormd.title        = editormd.$name = "Editor.md";
-    editormd.version      = "1.4.3";
+    editormd.version      = "1.4.4";
     editormd.homePage     = "https://pandao.github.io/editor.md/";
     editormd.classPrefix  = "editormd-";
     
@@ -3216,7 +3216,7 @@
         atLink        : /@(\w+)/g,
         email         : /(\w+)@(\w+)\.(\w+)\.?(\w+)?/g,
         emailLink     : /(mailto:)?([\w\.\_]+)@(\w+)\.(\w+)\.?(\w+)?/g,
-        emoji         : /:([\-\w]+):/g,
+        emoji         : /:([\+-\w]+):/g,
         emojiDatetime : /(\d{2}:\d{2}:\d{2})/g,
         twemoji       : /:(tw-([\w]+)-?(\w+)?):/g,
         fontAwesome   : /:(fa-([\w]+)(-(\w+)){0,}):/g,
@@ -3287,7 +3287,11 @@
             }
 
             for (var i = 0, len = matchs.length; i < len; i++)
-            {
+            {            
+                if (matchs[i] === ":+1:") {
+                    matchs[i] = ":\\+1:";
+                }
+
                 text = text.replace(new RegExp(matchs[i]), function($1, $2){
                     var faMatchs = $1.match(faIconReg);
                     var name     = $1.replace(/:/g, "");
@@ -3315,7 +3319,7 @@
                             }
                         }
                         else if (twemojiMatchs) 
-                        {                            
+                        {
                             for (var t = 0, len3 = twemojiMatchs.length; t < len3; t++)
                             {
                                 var twe = twemojiMatchs[t].replace(/:/g, "").replace("tw-", "");
@@ -3324,7 +3328,10 @@
                         }
                         else
                         {
-                            return "<img src=\"" + editormd.emoji.path + name + editormd.emoji.ext + "\" class=\"emoji\" title=\"&#58;" + name + "&#58;\" alt=\"&#58;" + name + "&#58;\" />";
+                            var src = (name === "+1") ? "plus1" : name;
+                            src     = (src === "black_large_square") ? "black_square" : src;
+
+                            return "<img src=\"" + editormd.emoji.path + src + editormd.emoji.ext + "\" class=\"emoji\" title=\"&#58;" + name + "&#58;\" alt=\"&#58;" + name + "&#58;\" />";
                         }
                     }
                 });
