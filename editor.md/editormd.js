@@ -2,12 +2,12 @@
  * Editor.md
  *
  * @file        editormd.js 
- * @version     v1.4.4 
+ * @version     v1.4.5 
  * @description Open source online markdown editor.
  * @license     MIT License
  * @author      Pandao
  * {@link       https://github.com/pandao/editor.md}
- * @updateTime  2015-05-09
+ * @updateTime  2015-06-02
  */
 
 ;(function(factory) {
@@ -59,7 +59,7 @@
     };
     
     editormd.title        = editormd.$name = "Editor.md";
-    editormd.version      = "1.4.4";
+    editormd.version      = "1.4.5";
     editormd.homePage     = "https://pandao.github.io/editor.md/";
     editormd.classPrefix  = "editormd-";
     
@@ -91,6 +91,7 @@
     editormd.defaults     = {
         mode                 : "gfm",          //gfm or markdown
         theme                : "default",
+        name                 : "",
         value                : "",             // value for CodeMirror, if mode not gfm/markdown
         markdown             : "",
         appendMarkdown       : "",             // if in init textarea value not empty, append markdown to textarea
@@ -382,7 +383,7 @@
             
             this.state.watching = (settings.watch) ? true : false;
             
-            if (!editor.hasClass("editormd")) {
+            if ( !editor.hasClass("editormd") ) {
                 editor.addClass("editormd");
             }
             
@@ -404,7 +405,12 @@
                 markdownTextarea = this.markdownTextarea = editor.children("textarea");
             }
             
-            markdownTextarea.addClass(classNames.textarea.markdown).attr("name", id + "-markdown-doc").attr("placeholder", settings.placeholder);
+            markdownTextarea.addClass(classNames.textarea.markdown).attr("placeholder", settings.placeholder);
+            
+            if (typeof markdownTextarea.attr("name") === "undefined" || markdownTextarea.attr("name") === "")
+            {
+                markdownTextarea.attr("name", (settings.name !== "") ? settings.name : id + "-markdown-doc");
+            }
             
             var appendElements = [
                 (!settings.readOnly) ? "<a href=\"javascript:;\" class=\"fa fa-close " + classPrefix + "preview-close-btn\"></a>" : "",
@@ -812,7 +818,7 @@
          * @returns {editormd}                  this(editormd instance object.)
          */
         
-        extends : function() {
+        extend : function() {
             if (typeof arguments[1] !== "undefined")
             {
                 if (typeof arguments[1] === "function")
@@ -1891,13 +1897,15 @@
             
             var newMarkdownDoc = editormd.$marked(cmValue, markedOptions);
             
-            this.markdownTextarea.val(cmValue);
+            //console.log("cmValue", cmValue, this.markdownTextarea, this.htmlTextarea);
+            
+            this.markdownTextarea.text(cmValue);
             
             cm.save();
             
             if (settings.saveHTMLToTextarea) 
             {
-                this.htmlTextarea.val(newMarkdownDoc);
+                this.htmlTextarea.text(newMarkdownDoc);
             }
             
             if(settings.watch || (!settings.watch && state.preview))
@@ -2112,7 +2120,7 @@
          * @returns {editormd}         返回editormd的实例对象
          */
         
-        setMarkdown : function(md) {            
+        setMarkdown : function(md) {
             this.cm.setValue(md || this.settings.markdown);
             
             return this;
@@ -2182,7 +2190,7 @@
                 return false;
             }
             
-            return this.htmlTextarea.html();
+            return this.htmlTextarea.val();
         },
         
         /**
@@ -3146,7 +3154,7 @@
         atLink        : /@(\w+)/g,
         email         : /(\w+)@(\w+)\.(\w+)\.?(\w+)?/g,
         emailLink     : /(mailto:)?([\w\.\_]+)@(\w+)\.(\w+)\.?(\w+)?/g,
-        emoji         : /:([\+-\w]+):/g,
+        emoji         : /:([\w\+-]+):/g,
         emojiDatetime : /(\d{2}:\d{2}:\d{2})/g,
         twemoji       : /:(tw-([\w]+)-?(\w+)?):/g,
         fontAwesome   : /:(fa-([\w]+)(-(\w+)){0,}):/g,
@@ -3778,7 +3786,7 @@
             var katexHandle = function() {
                 div.find("." + editormd.classNames.tex).each(function(){
                     var tex  = $(this);
-                    katex.render(tex.html(), tex[0]);
+                    katex.render(tex.html().replace(/&lt;/g, "<").replace(/&gt;/g, ">"), tex[0]);
                 });
             };
             
