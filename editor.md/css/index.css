@@ -179,6 +179,35 @@ code {
     background: #eee;
 }
 
+.case-list {
+}
+
+.case-list > li {
+    margin-bottom: 0.5rem;
+}
+
+.case-list > li + li {
+    margin-left: 1rem;
+}
+
+.case-list > li:nth-child(5n+1) {
+    margin-left: 0;
+}
+
+.case-list > li > a {
+    padding: 1.5rem;
+    border: 1px solid #fff;
+}
+
+.case-list > li > a:hover {
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+
+.case-list > li > a > img {
+    background-color: #fff;
+}
+
 @media only screen and (min-width: 400px) {
     .page-header-container {
         width: 90%;
