@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Slimore\Pagination\Paginator | Slimore</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Slimore</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Slimore.Pagination.html" title="Summary of Slimore\Pagination"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-Slimore.html">
+							Slimore<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Slimore.Cache.html">
+							Cache<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Slimore.Cache.Exception.html">
+							Exception						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Slimore.Captcha.html">
+							Captcha						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Database.html">
+							Database						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Debug.html">
+							Debug						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Http.html">
+							Http						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Image.html">
+							Image						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Log.html">
+							Log						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Middleware.html">
+							Middleware						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Mvc.html">
+							Mvc						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-Slimore.Pagination.html">
+							Pagination						</a>
+							</li>
+					<li>
+						<a href="namespace-Slimore.Upload.html">
+							Upload						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Slimore.Pagination.Paginator.html">Paginator</a></li>
+			</ul>
+
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Slimore.Pagination.Exception.html">Exception</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Paginator</h1>
+
+
+	<div class="description">
+	<p>Class Paginator</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Slimore.html">Slimore</a>\<a href="namespace-Slimore.Pagination.html">Pagination</a><br>
+		<b>Package:</b> Slimore\Pagination<br>
+
+				<b>Author:</b>
+				Pandao<br>
+				<b>Updatetime:</b>
+				2015-06-05 23:55:05<br>
+			<b>Located at</b> <a href="source-class-Slimore.Pagination.Paginator.html#19-213" title="Go to source code">Slimore/Pagination/Paginator.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#51-71" title="Go to source code">__construct</a>( <span><code><a href="class-Slimore.Mvc.Model.html">Slimore\Mvc\Model</a></code> <var>$model</var></span>, <span> <var>$page</var></span>, <span> <var>$total</var></span>, <span>integer <var>$num</var> = <span class="php-num">10</span></span>, <span>integer <var>$range</var> = <span class="php-num">6</span></span> )</code>
+
+			<div class="description short">
+				<p>Construction method</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Construction method</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$model</var></dt>
+						<dd></dd>
+						<dt><var>$page</var></dt>
+						<dd></dd>
+						<dt><var>$total</var></dt>
+						<dd></dd>
+						<dt><var>$num</var></dt>
+						<dd>10</dd>
+						<dt><var>$range</var></dt>
+						<dd>6</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="make" id="_make">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_make">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#74-89" title="Go to source code">make</a>( )</code>
+
+			<div class="description short">
+				<p>Make paginator params</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Make paginator params</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="range" id="_range">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_range">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#92-110" title="Go to source code">range</a>( )</code>
+
+			<div class="description short">
+				<p>Set/Get paginator ranges</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set/Get paginator ranges</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="model" id="_model">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Slimore.Mvc.Model.html">Slimore\Mvc\Model</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_model">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#113-124" title="Go to source code">model</a>( <span><code><a href="class-Slimore.Mvc.Model.html">Slimore\Mvc\Model</a></code> <var>$model</var></span> )</code>
+
+			<div class="description short">
+				<p>Reset model</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Reset model</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$model</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Slimore.Mvc.Model.html">Slimore\Mvc\Model</a></code><br>$model
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="query" id="_query">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_query">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#127-148" title="Go to source code">query</a>( <span>boolean <var>$toJson</var>,…</span> )</code>
+
+			<div class="description short">
+				<p>Sql query</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sql query</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$toJson</var>,…</dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getQuery" id="_getQuery">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getQuery">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#151-157" title="Go to source code">getQuery</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSql" id="_getSql">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSql">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#160-166" title="Go to source code">getSql</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="params" id="_params">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_params">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#169-193" title="Go to source code">params</a>( <span>boolean <var>$sql</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$sql</var></dt>
+						<dd>false</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="debug" id="_debug">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_debug">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#196-202" title="Go to source code">debug</a>( <span>boolean <var>$sql</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$sql</var></dt>
+						<dd>true</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="json" id="_json">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_json">#</a>
+			<code><a href="source-class-Slimore.Pagination.Paginator.html#205-212" title="Go to source code">json</a>( <span>boolean <var>$sql</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$return</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$sql</var></dt>
+						<dd>true</dd>
+						<dt><var>$return</var></dt>
+						<dd>false</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="sql" id="$sql">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#28" title="Go to source code"><var>$sql</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$sql" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="num" id="$num">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#29" title="Go to source code"><var>$num</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$num" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="page" id="$page">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#30" title="Go to source code"><var>$page</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$page" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="prev" id="$prev">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#31" title="Go to source code"><var>$prev</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$prev" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="next" id="$next">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#32" title="Go to source code"><var>$next</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$next" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="last" id="$last">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#33" title="Go to source code"><var>$last</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$last" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="first" id="$first">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#34" title="Go to source code"><var>$first</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$first" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="total" id="$total">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#35" title="Go to source code"><var>$total</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$total" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="range" id="$range">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#36" title="Go to source code"><var>$range</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$range" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="ranges" id="$ranges">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#37" title="Go to source code"><var>$ranges</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$ranges" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="offset" id="$offset">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#38" title="Go to source code"><var>$offset</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$offset" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="pageTotal" id="$pageTotal">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#39" title="Go to source code"><var>$pageTotal</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$pageTotal" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="baseUrl" id="$baseUrl">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#40" title="Go to source code"><var>$baseUrl</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$baseUrl" class="anchor">#</a>
+					<code><span class="php-quote">''</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="select" id="$select">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#41" title="Go to source code"><var>$select</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$select" class="anchor">#</a>
+					<code><span class="php-quote">'*'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="where" id="$where">
+			<td class="attributes"><code>
+				public  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#42" title="Go to source code"><var>$where</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$where" class="anchor">#</a>
+					<code>[]</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="orderBy" id="$orderBy">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#43" title="Go to source code"><var>$orderBy</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$orderBy" class="anchor">#</a>
+					<code><span class="php-quote">'id'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="sortBy" id="$sortBy">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#44" title="Go to source code"><var>$sortBy</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$sortBy" class="anchor">#</a>
+					<code><span class="php-quote">'ASC'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="model" id="$model">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#45" title="Go to source code"><var>$model</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$model" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="query" id="$query">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Slimore.Pagination.Paginator.html#46" title="Go to source code"><var>$query</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$query" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Slimore API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
