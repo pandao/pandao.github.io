@@ -43,6 +43,20 @@ body {
     margin-bottom: 0;
 }
 
+.editormd-form input[type=text] {
+  width: 263px;
+}
+
+.editormd-link-dialog .editormd-dialog-footer,
+.editormd-reference-link-dialog .editormd-dialog-footer,
+.editormd-image-dialog .editormd-dialog-footer {
+    padding-right: 5px;
+}
+
+.editormd-form label {
+    width: 71px;
+}
+
 .pui-form textarea, textarea {
     width: 100% !important;
 }
