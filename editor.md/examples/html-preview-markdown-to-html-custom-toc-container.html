@@ -2,26 +2,64 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>HTML Preview(markdown to html) - Editor.md examples</title>
+        <title>HTML Preview (markdown to html) - Editor.md examples</title>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="../css/editormd.preview.css" />
         <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
-        <style>            
-            .editormd-html-preview {
-                width: 90%;
-                margin: 0 auto;
+        <style>
+            body {padding: 40px;}
+            
+            #layout > header, .btns {
+                width: auto;
+            }
+            
+            #sidebar {
+                width: 400px;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                overflow: hidden;
+                background: #fff;
+                z-index: 100;
+                padding: 18px; 
+                border: 1px solid #ddd;
+                border-top: none;
+                border-bottom: none;
+            }
+            
+            #sidebar:hover {
+                overflow: auto;
+            }
+            
+            #sidebar h1 {
+                font-size: 16px;
+            }
+            
+            #custom-toc-container {
+                padding-left: 0;
+            }
+            
+            #test-editormd-view, #test-editormd-view2 {
+                padding-left: 0;
+                padding-right: 430px;
+                margin: 0;
             }
         </style>
     </head>
     <body>
         <div id="layout">
             <header>
-                <h1>Markdown转HTML的显示处理</h1> 
+                <h1>Markdown转HTML的显示处理之自定义 ToC 容器</h1> 
                 <p>即：非编辑情况下的HTML预览</p>
-                <p>HTML Preview(markdown to html)</p>       
+                <p>HTML Preview (markdown to html and custom ToC container)</p>       
             </header>
             <div class="btns">
-                <button onclick="location.href='./html-preview-markdown-to-html-custom-toc-container.html';">将 ToC 移到自定义容器层</button>
+                <button onclick="location.href='./html-preview-markdown-to-html.html';">返回 Back</button>
+            </div>
+            <div id="sidebar">
+                <h1>Table of Contents</h1>
+                <div class="markdown-body editormd-preview-container" id="custom-toc-container">#custom-toc-container</div>
             </div>
             <div id="test-editormd-view">
                <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>               
@@ -109,7 +147,7 @@ alert("script");
                         htmlDecode      : "style,script,iframe",  // you can filter tags decode
                         //toc             : false,
                         tocm            : true,    // Using [TOCM]
-                        //tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
+                        tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
                         //gfm             : false,
                         //tocDropdown     : true,
                         // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
