@@ -100,7 +100,9 @@ body {
     color: #fff;
 }
 
-.pui-menu > li > a:hover {
+.pui-menu > li > a.hover,
+html.no-touch .pui-menu > li > a:hover {
+    color: #fff;
     background-color: #1A8BE8;
 }
 
@@ -116,7 +118,9 @@ body {
     color: #666;
 }
 
-.pui-menu-dropdown > li > a:hover {
+.pui-menu-dropdown > li > a.hover,
+html.no-touch .pui-menu-dropdown > li > a:hover {
+    color: #666;
     background: #f6f6f6;
 }
 
@@ -162,7 +166,8 @@ body {
     transition: all 300ms ease-out;
 }
 
-#go-to-top:hover {
+#go-to-top.hover,
+html.no-touch #go-to-top:hover {
     color: #2989D6 !important;
 }
 
@@ -213,7 +218,8 @@ code {
     border: 1px solid #fff;
 }
 
-.case-list > li > a:hover {
+.case-list > li > a.hover,
+html.no-touch .case-list > li > a:hover {
     border: 1px solid #eee;
     background-color: #fff;
 }

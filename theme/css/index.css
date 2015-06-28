@@ -4,7 +4,7 @@ html, body {
     overflow: hidden;
 }
 
-a {
+a, a:link, a:visited {
     color: #fff;
 }
 
@@ -50,6 +50,14 @@ a {
 
 .editormd-form input[type=number] {
     width: 54px;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #1A8BE8;
 }
 
 footer a + a {

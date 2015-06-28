@@ -11,8 +11,7 @@
 	    <meta name="author" content="pandao, pandao@vip.qq.com" />
         <title>Editor.md - 开源在线 Markdown 编辑器</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="../planeui/vendors/animate.min.css" />
-        <link rel="stylesheet" type="text/css" href="../planeui/dist/css/planeui.min.css" />
+        <link rel="stylesheet" type="text/css" href="../dist/css/planeui.min.css" />
         <link rel="stylesheet" href="css/editormd.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
@@ -366,14 +365,17 @@
             </footer>
         </div>
         
-		<!--[if lt IE 9]>
-		<script type="text/javascript" src="../planeui/vendors/html5shiv.min.js"></script>
-		<script type="text/javascript" src="../planeui/vendors/respond.min.js"></script>
-		<script type="text/javascript" src="../planeui/vendors/selectivizr.min.js"></script> 
-		<![endif]-->
-        
-		<script type="text/javascript" src="../planeui/vendors/modernizr.min.js"></script>
         <script src="examples/js/jquery.min.js"></script>
+
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="../dist/js/planeui.patch.ie8.min.js"></script>
+        <![endif]-->
+
+        <!--[if lt IE 10]>
+        <script type="text/javascript" src="../dist/js/planeui.patch.ie9.min.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="../dist/js/planeui.js"></script>
         <script src="editormd.min.js"></script>   
         <script src="js/index.js"></script>
     </body>
