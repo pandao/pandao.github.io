@@ -114,7 +114,7 @@ html.no-touch .pui-menu-dropdown > li > a:hover {
     padding: 4rem 0;
 }
 
-.pui-panel-simple .pui-panel-box {
+.pui-card-simple .pui-card-box {
     padding-top: 1.6rem;
 }
 
@@ -136,6 +136,10 @@ html.no-touch .pui-menu-dropdown > li > a:hover {
 
 .page-footer a + a {
     margin-left: 8px;
+}
+
+.pui-card-title > h1 {
+    font-size: 1.8rem;
 }
 
 #go-to-top {
