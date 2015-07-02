@@ -3,6 +3,7 @@ html, body {
 }
 
 body {
+    font-size: 13px;
 }
 
 #layout {
@@ -128,7 +129,7 @@ html.no-touch .pui-menu-dropdown > li > a:hover {
     padding: 4rem 0;
 }
 
-.pui-panel-simple .pui-panel-box {
+.pui-card-simple .pui-card-box {
     padding-top: 1.6rem;
 }
 
@@ -193,20 +194,29 @@ html.no-touch #go-to-top:hover {
     margin-bottom: 0;
 }
 
+.pui-card-title > h1 {
+    font-size: 1.8rem;
+}
+
 code {
     color: #999;
     background: #eee;
 }
 
 .case-list {
+    width: 100%;
+    display: table;
 }
 
 .case-list > li {
-    margin-bottom: 0.5rem;
+    width: 20%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .case-list > li + li {
-    margin-left: 1rem;
+    margin-left: 0;
 }
 
 .case-list > li:nth-child(5n+1) {
@@ -215,6 +225,7 @@ code {
 
 .case-list > li > a {
     padding: 1.5rem;
+    padding: 0;
     border: 1px solid #fff;
 }
 
