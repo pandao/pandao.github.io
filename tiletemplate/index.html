@@ -9,8 +9,8 @@
         <meta name="keywords" content="tileTemplate" />
         <meta name="description" content="tileTemplate: 一个简单的、高性能的开源Javascript模板引擎。A simple, high performance Javascript template engine. " />
 	    <meta name="author" content="pandao, pandao@vip.qq.com" />
-        <title>tileTemplate - 一个简单的、高性能的开源Javascript模板引擎</title>
-        <link rel="stylesheet" type="text/css" href="../dist/css/planeui.min.css" />
+        <title>tileTemplate - 一个简单的、高性能的开源 JavaScript 模板引擎</title>
+        <link rel="stylesheet" type="text/css" href="../dist/css/planeui.css" />
         <link rel="stylesheet" type="text/css" href="css/prettify.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
@@ -21,7 +21,7 @@
             <header class="pui-bg-green page-header">
                 <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
                     <h1 class="pui-text-center pui-text-xxxxxl page-title"><a href="./index.html" class="pui-text-white"><i class="fa fa-lg fa-cube"></i> tileTemplate</a></h1>
-                    <p class="pui-text-center pui-text-xl">一个简单的、高性能的开源Javascript模板引擎</p>
+                    <p class="pui-text-center pui-text-xl">一个简单的、高性能的开源 JavaScript 模板引擎</p>
                     <menu class="pui-text-center page-menu">
                         <ul class="pui-menu pui-menu-inline pui-menu-radius">
                             <li>
@@ -40,10 +40,10 @@
                                         <a href="./examples/index.html" target="_blank">简单示例</a>
                                     </li>
                                     <li>
-                                        <a href="./examples/requirejs-test.html" target="_blank">使用Require.js</a>
+                                        <a href="./examples/requirejs-test.html" target="_blank">使用 Require.js</a>
                                     </li>
                                     <li>
-                                        <a href="./examples/seajs-test.html" target="_blank">使用Sea.js</a>
+                                        <a href="./examples/seajs-test.html" target="_blank">使用 Sea.js</a>
                                     </li>
                                     <li>
                                         <a href="./tests/test-debug.html" target="_blank">调试提示输出</a>
@@ -52,7 +52,7 @@
                                         <a href="./tests/test-tags.html" target="_blank">自定义标签语法</a>
                                     </li>
                                     <li>
-                                        <a href="https://github.com/pandao/tileTemplate/blob/master/tests/node-test.js" target="_blank">在Node.js中使用</a>
+                                        <a href="https://github.com/pandao/tileTemplate/blob/master/tests/node-test.js" target="_blank">在 Node.js 中使用</a>
                                     </li>
                                     <li>
                                         <a href="https://github.com/pandao/tileTemplate/blob/master/tests/express-test.js" target="_blank">在Express.js中使用</a>
@@ -118,7 +118,7 @@ output.innerHTML = tileTemplate.render("test-tpl", data);</code></pre>
                             </div>
                             <div class="pui-panel-box">
                                 <ul>
-                                    <li>简单小巧，精简后只有4.58K，开启gzip后只有2.3K；</li>
+                                    <li>简单小巧，精简后只有 4.58K，开启 gzip 后只有 2.3K；</li>
                                     <li>原生语法，高性能预编译和渲染模板 <a href="http://pandao.github.io/tiletemplate/tests/test-speed.html" title="(性能测试)" class="pui-link" target="_blank">（性能测试）</a>；</li>
                                     <li>安全机制，过滤和转义危险语句<a href="http://pandao.github.io/tiletemplate/tests/test-xss-filter.html" title="(安全测试)" class="pui-link" target="_blank">（安全测试）</a>；</li>
                                     <li>支持各种模块化标准（CommonJS / AMD / CMD 等）<a href="http://pandao.github.io/tiletemplate/examples/requirejs-test.html" class="pui-link" target="_blank">( Require.js示例 </a> 、<a href="http://pandao.github.io/tiletemplate/examples/seajs-test.html" class="pui-link" target="_blank">Sea.js示例 )</a>；</li>
@@ -174,7 +174,7 @@ output.innerHTML = tileTemplate.render("test-tpl", data);</code></pre>
                             <div class="pui-panel-box">
                                 <p>tileTemplate 遵循和使用 <a href="https://github.com/pandao/tileTemplate/blob/master/LICENSE" class="pui-link" target="_blank">MIT License</a> 开源协议，无论个人还是公司，都可以免费自由使用。</p>
                                 <br/>
-                                <p><a href="https://github.com/pandao/tileTemplate/issues/new" class="pui-btn pui-bg-green" target="_blank" title="提交Bug或建议"><i class="fa fa-lg fa-github"></i> 提交Bug或建议</a></p>
+                                <p><a href="https://github.com/pandao/tileTemplate/issues/new" class="pui-btn pui-bg-green" target="_blank" title="提交Bug或建议"><i class="fa fa-lg fa-github"></i> 提交 Bug 或建议</a></p>
                                 <div class="github-buttons">
                                     <p>关注和贡献代码：</p>
                                     <p><iframe src="https://ghbtns.com/github-btn.html?user=pandao&repo=tileTemplate&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></p>
@@ -201,15 +201,20 @@ output.innerHTML = tileTemplate.render("test-tpl", data);</code></pre>
             </footer>
         </div>
         
+        <!--[if (gte IE 9) | !(IE)]><!-->
+		<script type="text/javascript" src="../planeui/app/js/jquery-2.1.1.min.js"></script>
+        <!--<![endif]-->
+
 		<!--[if lt IE 9]>
-		<script type="text/javascript" src="../planeui/vendors/html5shiv.min.js"></script>
-		<script type="text/javascript" src="../planeui/vendors/respond.min.js"></script>
-		<script type="text/javascript" src="../planeui/vendors/selectivizr.min.js"></script> 
+		<script type="text/javascript" src="../planeui/app/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../dist/js/planeui.patch.ie8.min.js"></script>
 		<![endif]-->
-        
+
+		<!--[if lt IE 10]>
+		<script type="text/javascript" src="../dist/js/planeui.patch.ie9.min.js"></script>
+		<![endif]-->
+        <script type="text/javascript" src="../dist/js/planeui.min.js"></script>        
 		<script type="text/javascript" src="../editor.md/lib/prettify.min.js"></script>
-		<script type="text/javascript" src="../planeui/vendors/modernizr.min.js"></script>
-        <script src="tests/js/jquery.min.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>

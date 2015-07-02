@@ -10,6 +10,10 @@ body {
     text-align: center;
 }
 
+html.no-touch a:hover {
+    color: #4CAF50;
+}
+
 .page-header {
     padding: 5rem 0 10rem;
 }
@@ -33,12 +37,20 @@ body {
     color: #fff;
 }
 
-.pui-menu > li > a:hover {
-    background-color: #3B983B;
+html.no-touch .pui-menu > li > a:hover, 
+.pui-menu > li > a.hover {
+    background: red;
+    color: #fff;
+    background: #3B983B;
 }
 
 .pui-menu > li > a > .fa {
     margin-top: -3px;
+}
+
+.pui-menu > li > ul a.hover,
+html.no-touch .pui-menu > li > ul a:hover {
+    color: #555;
 }
 
 code {
@@ -93,7 +105,8 @@ li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
     color: #666;
 }
 
-.pui-menu-dropdown > li > a:hover {
+.pui-menu-dropdown > li > a.hover,
+html.no-touch .pui-menu-dropdown > li > a:hover {
     background: #f6f6f6;
 }
 
