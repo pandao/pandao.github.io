@@ -1,0 +1,39 @@
+{
+  "name": "moder.js",
+  "version": "0.1.0",
+  "description": "Front-end AMD/CMD/CommonJS Module (locale) Loader. ",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandao/moder.js.git"
+  },
+  "keywords": [
+    "moder",
+    "moder.js",
+    "module",
+    "amd",
+    "cmd",
+    "loader",
+    "commonjs"
+  ],
+  "author": "Pandao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pandao/moder.js/issues"
+  },
+  "homepage": "https://github.com/pandao/moder.js",
+  "devDependencies": {
+    "dateformatter": "^0.1.0",
+    "gulp": "^3.9.1",
+    "gulp-header": "^1.7.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3"
+  }
+}
