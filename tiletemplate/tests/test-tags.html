@@ -7,20 +7,17 @@
     <body>
         <div id="output"></div>
         <script id="test-tpl" type="text/tileTemplate">
-            
             <%=tag:em:12%>
             <%=tag:em:haha%> <%=tag:em:哈哈%>
             
             <%=tag:time%>
             <%=tag:em:12%>
-            
         </script>
 		<script type="text/javascript" src="../src/tiletemplate.js"></script>
         <script>
             console.time('tileTemplate');
 
-            tileTemplate.tag("em", function(content) { 
-
+            tileTemplate.tag("em", function(content) {
                 console.log("回调输出", "em", content);	
 
                 if(content == 12) {

@@ -39,14 +39,14 @@
 		<script type="text/javascript" src="../src/tiletemplate.js"></script>
         <script>
             console.time('tileTemplate');
-				
+
             var data = {
-                version: "1.0.0",
-                title : "标题XXX",
-                avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+                version : "1.0.0",
+                title   : "标题XXX",
+                avatar  : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
 				avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123);"',
 				avatar3 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123)',
-                list : []
+                list    : []
             };  
 
             for (var i = 0; i < 10; i ++) {
@@ -54,9 +54,9 @@
                     index: (i+1),
                     user: '<strong style="color:red">tileTemplate '+(i+1)+'</strong>',
                     site: 'https://github.com/pandao/tileTemplate'
-                });	
+                });
             };
-            
+
             tileTemplate.config('debug', true); 
 
             document.getElementById('output').innerHTML  = tileTemplate.render("xss-test", data);

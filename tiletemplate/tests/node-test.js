@@ -1,3 +1,5 @@
+"use strict"; 
+
 console.time('tileTemplate');
 
 var tileTemplate = require("../src/tiletemplate.node");
@@ -38,7 +40,7 @@ tileTemplate.tag("time", function() {
 	return " time: "+(new Date).getTime();
 }); 
 
-tileTemplate.config("basePath", __dirname + "/tpl");  //默认基本目录
+tileTemplate.config("basePath", __dirname + "/tpl/");  //默认基本目录
 
 // 扩展 tileTemplate
 tileTemplate.extend({
@@ -54,7 +56,7 @@ console.log(tileTemplate);
 
 //console.log(tileTemplate.settings); 
 
-var html = tileTemplate.render("test.tile.html", data);
+var html = tileTemplate.render("test", data);
 //console.log(html);
 
 var html2 = tileTemplate.render("<p>title：<%=title%> <%=version%></p>", {

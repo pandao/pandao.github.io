@@ -17,7 +17,7 @@
         <p style="background:#ccc;">output3</p>
         <div id="output3" style="background:#ccc;"></div>
         <script id="test-tpl" type="text/tileTemplate">
-            <h1><%=title%></h1>
+            <h1><%=title%> <%=location%> <%=window%></h1>
             <ul> 
                 <% for (i = 0, l = list.length; i < l; i ++) { %>
                     <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<a href="<%=list[i].site%>"><%=list[i].site%></a> <%=(list.index>1?'>1':'<1')%></li>
@@ -91,13 +91,22 @@
 		<script type="text/javascript" src="../src/tiletemplate.js"></script>
         <script>
             console.time('tileTemplate');
+            
+            var define = function(fn) {
+                return 'define()';
+            };
 				
             var data = {
                 version: "1.0.0",
                 title : "标题XXX",
                 avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
 				avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123);"',
-                list : []
+                list : [],
+                location : 'location',
+                window : 'window',
+                alert : 'alert',
+                localStorage : 'localStorage',
+                array : [52345234, 545342534]
             };  
 
             for (var i = 0; i < 10; i ++) {
@@ -109,8 +118,7 @@
             };
 
 				
-            tileTemplate.tag("em", function(content) { 
-
+            tileTemplate.tag("em", function(content) {
                 if(content == 12) return '<img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_thumb.gif" alt="em'+content+'"/>';
                 else return content.toString();
             });
@@ -126,13 +134,15 @@
             
             tileTemplate.config('debug', true);
 
-            var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML);
+            var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML, data);
 
             //var tpl  = tileTemplate.render("test-tpl", data); 
             //tileTemplate.clear("test-tpl");
             var tpl  = tileTemplate.render("test-tpl", data); 
             //tileTemplate.clear("test-tpl2");
             //tpl  = tileTemplate.render("test-tpl", data);  
+            
+            console.log(compiler);
 
             document.getElementById('output').innerHTML = tpl;
             document.getElementById('output2').innerHTML = compiler(data);

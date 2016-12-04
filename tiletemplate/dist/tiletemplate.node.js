@@ -1,3 +1,14 @@
+/*
+ * tileTemplate
+ *
+ * @file        tiletemplate.node.js 
+ * @description A simple, high performance Javascript template engine.
+ * @version     v1.6.0
+ * @author      Pandao
+ * {@link       https://github.com/pandao/tileTemplate}
+ * @updateTime  2016-12-04 15:02:47
+ */
+
 "use strict"; 
 
 var tileTemplate = require("./tiletemplate");

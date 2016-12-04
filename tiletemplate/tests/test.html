@@ -25,7 +25,7 @@
         <script id="test-tpl-tag" type="text/tileTemplate">
 		<%=tag:time%>
 				<%=tag:em:12%>         <%=tag:em:12%>
-		<% include("test-tpl") %>
+		  <% include("test-tpl") %>
         </script>
         <script id="test-tpl2" type="text/tileTemplate">
 		Hello {{=title}}  
@@ -55,7 +55,8 @@
 				avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123);"',
 				avatar3 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123)',
 				list : []
-			};  
+			};
+
 			var length = 10;
 
 			for (var i = 0; i < length; i ++) {
@@ -97,10 +98,10 @@
 				});
 				
 				var html = document.getElementById("test-tpl").innerHTML;
-
-				var compile = tileTemplate.compile(html);
-				var tpl = compile({title:"测试标题"});
-				assert.ok(tpl, "渲染成功！" ); 
+                var data = {title:"测试标题"};
+				var compile = tileTemplate.compile(html, data);
+				var tpl = compile(data);
+				assert.ok(tpl, "渲染成功！"); 
 				assert.strictEqual(tpl, "Hello 测试标题", "equal!");
 			}); 
 
@@ -119,7 +120,7 @@
 					return " time: "+(new Date).getTime();
 				}); 
  
-				var tpl = tileTemplate.render("test-tpl-tag", {});
+				var tpl = tileTemplate.render("test-tpl-tag", data);
 				assert.ok(tpl, "渲染成功！" );  
 			}); 
 
@@ -167,9 +168,9 @@
 				});
 				
 				var html = document.getElementById("test-tpl2").innerHTML;
-
-				var compile = tileTemplate.compile(html);
-				var tpl = compile({title:"测试标题"});
+                var data = {title:"测试标题"};
+				var compile = tileTemplate.compile(html, data);
+				var tpl = compile(data);
 				assert.ok(tpl, "渲染成功！" ); 
 				assert.strictEqual(tpl, "Hello 测试标题", "equal!");
 			}); 

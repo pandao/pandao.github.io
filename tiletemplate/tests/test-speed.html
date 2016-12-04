@@ -52,7 +52,7 @@
                     //tileTemplate.set("debug", true);
                     tileTemplate.set("filter", false);
 					var source = document.getElementById('tile-test-template').innerHTML;
-					var fn = tileTemplate.compile(source);
+					var fn = tileTemplate.compile(source, data);
 					for (var i = 0; i < number; i ++) {
 						fn(data);
 					}

@@ -92,13 +92,16 @@
 		<script type="text/javascript">
 			require.config({
 		　　　　paths: {
+                  "tpl" : "js/tpl.module",  // 预编译的模板文件模块
 		　　　　　　"jquery": "js/jquery.min"
 		　　　　}
 		　　});
 
-		　　require(['../src/tiletemplate'], function(tileTemplate) {  
+		　　require(['../src/tiletemplate', 'tpl'], function(tileTemplate, tpl) {  
               
                 console.time('tileTemplate');
+
+                console.log(tpl({str : '一个字符串！'})); // 渲染预编译的模板文件模块
 				
 				var data = {
 					version: "1.0.0",
@@ -131,7 +134,7 @@
 					closeTag : "}}"
 				});*/
 				
-				var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML);
+				var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML, data);
 
 				//var tpl  = tileTemplate.render("test-tpl", data); 
 				//tileTemplate.clear("test-tpl");

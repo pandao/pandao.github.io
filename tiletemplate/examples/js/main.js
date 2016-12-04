@@ -1,7 +1,10 @@
 define(function(require, exports, module) { 
     if(typeof console == "object") console.time('tileTemplate');
     
+    var tpl          = require('tpl'); // 预编译的模板文件模块
 	var tileTemplate = require('../../src/tiletemplate');
+    
+    console.log(tpl({str : '一个字符串！'})); // 渲染预编译的模板文件模块
     
     var data = {
         version: "1.0.0",
@@ -40,7 +43,7 @@ define(function(require, exports, module) {
         return " time: " + (new Date).getTime();
     }); 
     
-    var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML);
+    var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML, data);
     document.getElementById('output2').innerHTML  = compiler(data);
     document.getElementById('output3').innerHTML  = tileTemplate.render("<%=title%>", data);
     document.getElementById('textarea-tpl').value = tileTemplate.render('textarea-tpl', data);

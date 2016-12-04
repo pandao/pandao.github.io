@@ -162,10 +162,11 @@
 		<script type="text/javascript" src="js/sea.js"></script>
 		<script type="text/javascript">
 			seajs.config({
-				base : "./js",
-		　　　　alias : {
-		　　　　　　"jquery": "jquery.min"
-		　　　　}
+                base : "./js",
+                alias : {
+                    "tpl" : "tpl.module",  // 预编译的模板文件模块
+                    "jquery": "jquery.min"
+                }
 		　　});
 
 			seajs.use("./js/main");
