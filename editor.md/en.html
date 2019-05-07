@@ -218,6 +218,61 @@
             </header>
             <div class="pui-grid pui-layout pui-layout-fixed pui-layout-fixed-1200 page-content">
                 <div class="pui-row">
+                    <div class="pui-grid-xs-8">
+                        <a name="start"></a>
+                        <div class="pui-card pui-card-simple">
+                            <div class="pui-card-title">
+                                <h1 class="pui-text-left">Example</h1>
+                            </div>
+                            <div class="pui-card-box">
+                                <div class="code-box">
+                                    <pre class="prettyprint lang-html example-code">
+&lt;link rel="stylesheet" href="editormd/css/editormd.css" /&gt;
+&lt;div id="test-editor"&gt;
+    &lt;textarea style="display:none;"&gt;### Editor.md
+
+**Editor.md**: The open source embeddable online markdown editor, based on CodeMirror & jQuery & Marked.
+    &lt;/textarea&gt;
+&lt;/div&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="editormd/editormd.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    $(function() {
+        var editor = editormd("test-editor", {
+            // width  : "100%",
+            // height : "100%",
+            path   : "editormd/lib/"
+        });
+    });
+&lt;/script&gt;</pre>
+                                    <span class="copy-btn">Copy</span>
+                                </div>
+                                <p class="pui-text-right"><a href="http://editor.md.ipandao.com/examples/" class="link pui-text-blue">More Examples &gt;&gt;</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pui-grid-xs-4">
+                        <div class="pui-card-title">
+                            <h1 class="pui-text-left">Features</h1>
+                        </div>
+                        <div class="pui-card-box">
+                            <ul>
+                                <li>Support Standard Markdown / CommonMark and GFM(GitHub Flavored Markdown);</li>
+                                <li>Full-featured: Real-time Preview, <a href="http://editor.md.ipandao.com/examples/image-upload.html" class="link pui-text-blue">Image (cross-domain) upload</a>, Preformatted text/Code blocks/Tables insert, Code fold, Search replace, Read only, Themes, Multi-languages, L18n, HTML entities, Code syntax highlighting...;</li>
+                                <li>Markdown Extras : Support <a href="http://editor.md.ipandao.com/examples/toc.html" class="link pui-text-blue">ToC (Table of Contents)</a>, <a href="http://editor.md.ipandao.com/examples/emoji.html" class="link pui-text-blue">Emoji</a>, <a href="http://editor.md.ipandao.com/examples/task-lists.html" class="link pui-text-blue">Task lists</a>, <a href="http://editor.md.ipandao.com/examples/@links.html" class="link pui-text-blue">@Links</a>...;</li>
+                                <li>Support <a href="http://editor.md.ipandao.com/examples/katex.html" class="link pui-text-blue">TeX (LaTeX expressions, Based on KaTeX)</a>, <a href="http://editor.md.ipandao.com/examples/flowchart.html" class="link pui-text-blue">Flowchart</a> and <a href="http://editor.md.ipandao.com/examples/sequence-diagram.html" class="link pui-text-blue">Sequence Diagram</a> of Markdown extended syntax;</li>
+                                <li>Support identification, interpretation, fliter of the HTML tags;</li>
+                                <li>Support AMD/CMD (Require.js & Sea.js) Module Loader, and Custom/define editor plugins;</li>
+                                <li>Compatible with all major browsers (IE8+), compatible Zepto.js and iPad;</li>
+                                <li>Support Custom theme styles;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="pui-hr pui-layout-fixed pui-layout-fixed-1200" />
+            <div class="pui-grid pui-layout pui-layout-fixed pui-layout-fixed-1200 page-content">
+                <div class="pui-row">
                     <div class="pui-grid-xs-12 pui-grid-sm-4 pui-grid-md-4">
                         <a name="download"></a>
                         <div class="pui-card pui-card-simple">
@@ -289,7 +344,7 @@
                                 <p>Development tools :</p>
                                 <ul>
                                     <li>
-                                        <a href="https://github.com/adobe/brackets/" title="Adobe Brackets" target="_blank">Brackets</a>
+                                        <a href="https://code.visualstudio.com/" title="Visual Studio Code" target="_blank">Visual Studio Code</a>
                                     </li>
                                     <li>
                                         <a href="http://sass-lang.com/" title="Sass/Scss" target="_blank">Sass/Scss</a>
@@ -459,7 +514,7 @@
                         <span class="pui-block pui-text-gray pui-text-normal">Editor.md</span>
                     </p>
                 </h1>
-                <p>Copyright &copy; 2015 <a href="https://github.com/pandao/editor.md" class="pui-link" target="_blank">Editor.md</a>, <a href="https://github.com/pandao/editor.md/blob/master/LICENSE" class="pui-link" target="_blank">MIT license.</a></p>
+                <p>Copyright &copy; 2015-2019 <a href="https://github.com/pandao/editor.md" class="pui-link" target="_blank">Editor.md</a>, <a href="https://github.com/pandao/editor.md/blob/master/LICENSE" class="pui-link" target="_blank">MIT license.</a></p>
                 <p>Design & Develop By: <a href="https://github.com/pandao" class="pui-link" target="_blank">Pandao</a>
                  <a href="https://github.com/pandao" target="_blank"><i class="fa fa-github fa-lg"></i></a>
                  <a href="https://twitter.com/ipandao" target="_blank"><i class="fa fa-twitter fa-lg pui-text-blue"></i></a>
@@ -481,6 +536,7 @@
 
         <script type="text/javascript" src="https://pandao.github.io/dist/js/planeui.js"></script>
         <script src="editormd.min.js"></script>   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
         <script src="languages/en.js"></script>
         <script src="js/index-en.js"></script>
     </body>

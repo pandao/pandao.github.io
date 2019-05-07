@@ -221,6 +221,61 @@
             </header>
             <div class="pui-grid pui-layout pui-layout-fixed pui-layout-fixed-1200 page-content">
                 <div class="pui-row">
+                    <div class="pui-grid-xs-8">
+                        <a name="start"></a>
+                        <div class="pui-card pui-card-simple">
+                            <div class="pui-card-title">
+                                <h1 class="pui-text-left">开始使用</h1>
+                            </div>
+                            <div class="pui-card-box">
+                                <div class="code-box">
+                                    <pre class="prettyprint lang-html example-code">
+&lt;link rel="stylesheet" href="editormd/css/editormd.css" /&gt;
+&lt;div id="test-editor"&gt;
+    &lt;textarea style="display:none;"&gt;### 关于 Editor.md
+
+**Editor.md** 是一款开源的、可嵌入的 Markdown 在线编辑器（组件），基于 CodeMirror、jQuery 和 Marked 构建。
+    &lt;/textarea&gt;
+&lt;/div&gt;
+&lt;script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="editormd/editormd.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    $(function() {
+        var editor = editormd("test-editor", {
+            // width  : "100%",
+            // height : "100%",
+            path   : "editormd/lib/"
+        });
+    });
+&lt;/script&gt;</pre>
+                                    <span class="copy-btn">复制代码</span>
+                                </div>
+                                <p class="pui-text-right"><a href="http://editor.md.ipandao.com/examples/" class="link pui-text-blue">更多示例 &gt;&gt;</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pui-grid-xs-4">
+                        <div class="pui-card-title">
+                            <h1 class="pui-text-left">主要特性</h1>
+                        </div>
+                        <div class="pui-card-box">
+                            <ul>
+                                <li>支持“标准” Markdown / CommonMark 和 Github 风格的语法，也可变身为代码编辑器；</li>
+                                <li>支持实时预览、<a href="http://editor.md.ipandao.com/examples/image-upload.html" class="link pui-text-blue">图片（跨域）上传</a>、预格式文本/代码/表格插入、代码折叠、搜索替换、只读模式、自定义样式主题和多语言语法高亮等功能；</li>
+                                <li>支持 <a href="http://editor.md.ipandao.com/examples/toc.html" class="link pui-text-blue">ToC 目录</a>（Table of Contents）、<a href="http://editor.md.ipandao.com/examples/emoji.html" class="link pui-text-blue">Emoji 表情</a>、<a href="http://editor.md.ipandao.com/examples/task-lists.html" class="link pui-text-blue">Task lists</a>、<a href="http://editor.md.ipandao.com/examples/@links.html" class="link pui-text-blue">@链接</a>等 Markdown 扩展语法；</li>
+                                <li>支持 <a href="http://editor.md.ipandao.com/examples/katex.html" class="link pui-text-blue">TeX 科学公式</a>（基于 KaTeX）、<a href="http://editor.md.ipandao.com/examples/flowchart.html" class="link pui-text-blue">流程图</a> Flowchart 和 <a href="http://editor.md.ipandao.com/examples/sequence-diagram.html" class="link pui-text-blue">时序图</a> Sequence Diagram;</li>
+                                <li>支持识别和解析 HTML 标签，并且支持自定义过滤标签解析，具有可靠的安全性和几乎无限的扩展性；</li>
+                                <li>支持 AMD / CMD 模块化加载（支持 Require.js &amp; Sea.js），并且支持自定义扩展插件；</li>
+                                <li>兼容主流的浏览器（IE8+）和 Zepto.js，且支持 iPad 等平板设备；</li>
+                                <li>支持自定义主题样式；</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="pui-hr pui-layout-fixed pui-layout-fixed-1200" />
+            <div class="pui-grid pui-layout pui-layout-fixed pui-layout-fixed-1200 page-content">
+                <div class="pui-row">
                     <div class="pui-grid-xs-12 pui-grid-sm-4 pui-grid-md-4">
                         <a name="download"></a>
                         <div class="pui-card pui-card-simple">
@@ -292,7 +347,7 @@
                                 <p>开发构建使用到的项目及工具：</p>
                                 <ul>
                                     <li>
-                                        <a href="https://github.com/adobe/brackets/" title="Adobe Brackets" target="_blank">Brackets（推荐使用）</a>
+                                        <a href="https://code.visualstudio.com/" title="Visual Studio Code" target="_blank">Visual Studio Code</a>
                                     </li>
                                     <li>
                                         <a href="http://sass-lang.com/" title="Sass/Scss" target="_blank">Sass/Scss</a>
@@ -485,7 +540,7 @@
                         <span class="pui-block pui-text-gray pui-text-normal">Editor.md</span>
                     </p>
                 </h1>
-                <p>Copyright &copy; 2015 <a href="https://github.com/pandao/editor.md" class="pui-link" target="_blank">Editor.md</a>, <a href="https://github.com/pandao/editor.md/blob/master/LICENSE" class="pui-link" target="_blank">MIT license.</a></p>
+                <p>Copyright &copy; 2015-2019 <a href="https://github.com/pandao/editor.md" class="pui-link" target="_blank">Editor.md</a>, <a href="https://github.com/pandao/editor.md/blob/master/LICENSE" class="pui-link" target="_blank">MIT license.</a></p>
                 <p>Design & Develop By: <a href="https://github.com/pandao" class="pui-link" target="_blank">Pandao</a>
                  <a href="https://github.com/pandao" target="_blank"><i class="fa fa-github fa-lg"></i></a>
                  <a href="https://twitter.com/ipandao" target="_blank"><i class="fa fa-twitter fa-lg pui-text-blue"></i></a>
@@ -506,7 +561,8 @@
         <![endif]-->
 
         <script type="text/javascript" src="https://pandao.github.io/dist/js/planeui.js"></script>
-        <script src="editormd.min.js"></script>   
+        <script src="editormd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>

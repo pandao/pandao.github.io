@@ -20,7 +20,33 @@ $(function() {
     $('a').click(function() {
         $(this).blur();
     }); 
-    
+
+    var timer;
+    var $copyBtn = $('.copy-btn');
+    var isEN = /en\.html/.test(location.href);
+
+    $copyBtn.attr('data-clipboard-text', $('.example-code').text());
+
+    var clipboard = new ClipboardJS('.copy-btn');
+
+    clipboard.on("success", function() {
+        clearTimeout(timer);
+        $copyBtn.addClass('pui-success').html(isEN ? 'Successful' : '复制成功！');
+
+        timer = setTimeout(function() {
+            $copyBtn.removeClass('pui-success').html(isEN ? 'Copy' : '复制代码');
+        }, 1000);
+    });
+
+    clipboard.on("error", function() {
+        clearTimeout(timer);
+        $copyBtn.addClass('pui-error').html(isEN ? 'Unsuccessful' : '复制失败！');
+
+        timer = setTimeout(function() {
+            $copyBtn.removeClass('pui-error').html(isEN ? 'Copy' : '复制代码');
+        }, 1000);
+    });
+
     var goToTop = $("#go-to-top");
     
     $(window).scroll(function(){
